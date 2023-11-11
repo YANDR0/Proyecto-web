@@ -1,3 +1,4 @@
+	- baduibattles
 
 	- Al aceptar cookies, empezarán a caer galletas como lluvia
 	- Una pestaña que diga feedback y que salga el alien feedback de ben 10
@@ -7,9 +8,22 @@
 	- Depende la cantidad de producto es del tamaño de la imagen
 	- Cuando quieras ver un prodcuto con detalle se agregará uno de estos al carrito
 	- Pedir número telefónico pero teniendo que moverse de uno a uno con botones
-
+	- Mostrar anuncios extraños que cuando quieran ser cerrados se muevan aleatorimente
+	- Que el precio salga como de cierta forma proporcional: "No sé, más de 5 peso"
+	- Un objeto que siga a tu cursor y no te permita dar click o interactuar
+	
 
 	- La página vende productos del museo británico así bien infames
+			- Mesa de té barroca (Calendario azteca)
+			- Pisapapeles (Moai)
+			- Casa de campaña (Pirámide egipcia)
+			- Broche para el pelo (Penacho de moctezuma)
+			- Calendario para pared (Stonehenge)
+			- Perchero (Momia egipcia)
+			- Cuchillo para mantequilla (Macuahuitl)
+			- Pijama (Traje samurai)
+			- Centro de mesa (Fósil archaeopteryx)
+			- Afeitadora (Hacha vikinga)
 
 
 	- El admin puede designar usuarios como admins

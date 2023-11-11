@@ -1,11 +1,12 @@
 
 	- Al aceptar cookies, empezarán a caer galletas como lluvia
 	- Una pestaña que diga feedback y que salga el alien feedback de ben 10
-	- Al querer descartar o midifcar un producto mandarle como 10 captchas todos rancios
+	- Al querer descartar o modificar un producto mandarle como 10 captchas todos rancios
 	- Pedir tarjeta de crédito para que te saludo lalo garza (Foto sin camisa en su cama calvo)
 	- Para poner la cantidad de productos poner una barra que vaya del 1 al 1000000
 	- Depende la cantidad de producto es del tamaño de la imagen
 	- Cuando quieras ver un prodcuto con detalle se agregará uno de estos al carrito
+	- Pedir número telefónico pero teniendo que moverse de uno a uno con botones
 
 
 	- La página vende productos del museo británico así bien infames
@@ -14,4 +15,3 @@
 	- El admin puede designar usuarios como admins
 	- Los admins añaden productos, eliminan y modifican, los usuarios solo pueden comprar
 	
-		

@@ -9,7 +9,25 @@
 
 </head>
 
-<body style="background-image: url();">     <!--In case we want a background image-->
+<body style="background-image: url();"> <!--In case we want a background image-->
+
+
+    <!-- Open the modal using ID.showModal() method -->
+    <button class="btn pl-72" onclick="my_modal_5.showModal()">open modal</button>
+    <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box">
+            <h3 class="font-bold text-lg">Hello!</h3>
+            <p class="py-4">Press ESC key or click the button below to close</p>
+            <div class="modal-action">
+                <form method="dialog">
+                    <!-- if there is a button in form, it will close the modal -->
+                    <button class="btn">Close</button>
+                </form>
+            </div>
+        </div>
+    </dialog>
+
+
     <div class="inline">
 
         <!--Sidebar an menu of the page-->
@@ -19,8 +37,10 @@
             <div class="h-full px-3 py-4 overflow-y-auto bg-gray-800 dark:bg-gray-800">
                 <ul class="space-y-4 font-medium">
                     <li>
-                        <a href="#" class="flex items-center p-2 text-gray-300 rounded-lg dark:text-white hover:bg-gray-700 group">
-                            <img src="https://raw.githubusercontent.com/YANDR0/Proyecto-web/main/assets/sidebar/logo.png" alt="">
+                        <a href="#"
+                            class="flex items-center p-2 text-gray-300 rounded-lg dark:text-white hover:bg-gray-700 group">
+                            <img src="https://raw.githubusercontent.com/YANDR0/Proyecto-web/main/assets/sidebar/logo.png"
+                                alt="">
                         </a>
                     </li>
                     <br>
@@ -28,32 +48,36 @@
                         <a href="userProfile.html" class="flex items-center p-2 text-gray-300 rounded-lg dark:text-white 
                         hover:bg-gray-700 group grid grid-cols-2 ml-2">
                             <div class="justify-self-start text-lg text-slate-300">Iniciar sesión</div>
-                            <div><img src="https://raw.githubusercontent.com/YANDR0/Proyecto-web/main/assets/sidebar/logIn.png" 
-                            style="max-height: 60px;" class="float-right mr-3"></div>
+                            <div><img
+                                    src="https://raw.githubusercontent.com/YANDR0/Proyecto-web/main/assets/sidebar/logIn.png"
+                                    style="max-height: 60px;" class="float-right mr-3"></div>
                         </a>
                     </li>
                     <li>
                         <a href="shoppingKart.html" class="flex items-center p-2 text-gray-300 rounded-lg dark:text-white 
                         hover:bg-gray-700 group grid grid-cols-2 ml-2">
                             <div class="justify-self-start text-lg text-slate-300">Carrito de compras</div>
-                            <div><img src="https://raw.githubusercontent.com/YANDR0/Proyecto-web/main/assets/sidebar/shoppingKart.png" 
-                            style="max-height: 60px;" class="float-right mr-3"></div>
+                            <div><img
+                                    src="https://raw.githubusercontent.com/YANDR0/Proyecto-web/main/assets/sidebar/shoppingKart.png"
+                                    style="max-height: 60px;" class="float-right mr-3"></div>
                         </a>
                     </li>
                     <li>
                         <a href="#" class="flex items-center p-2 text-gray-300 rounded-lg dark:text-white 
                         hover:bg-gray-700 group grid grid-cols-2 ml-2">
                             <div class="justify-self-start text-lg text-slate-300">Preguntas frecuentes</div>
-                            <div><img src="https://raw.githubusercontent.com/YANDR0/Proyecto-web/main/assets/sidebar/questionMark.png" 
-                            style="max-height: 60px;" class="float-right mr-3"></div>
+                            <div><img
+                                    src="https://raw.githubusercontent.com/YANDR0/Proyecto-web/main/assets/sidebar/questionMark.png"
+                                    style="max-height: 60px;" class="float-right mr-3"></div>
                         </a>
                     </li>
                     <li>
                         <a href="feedback.html" class="flex items-center p-2 text-gray-300 rounded-lg dark:text-white 
                         hover:bg-gray-700 group grid grid-cols-2 ml-2">
                             <div class="justify-self-start text-lg text-slate-300">Feedback</div>
-                            <div><img src="https://raw.githubusercontent.com/YANDR0/Proyecto-web/main/assets/sidebar/feedback.png" 
-                            style="max-height: 60px;" class="float-right mr-3"></div>
+                            <div><img
+                                    src="https://raw.githubusercontent.com/YANDR0/Proyecto-web/main/assets/sidebar/feedback.png"
+                                    style="max-height: 60px;" class="float-right mr-3"></div>
                         </a>
                     </li>
                 </ul>
@@ -64,7 +88,7 @@
 
         <!--Carrousel Ponemos uno? Es que no jalan XD-->
         <div class="flex p-4 sm:ml-64">
-            
+
             <div class="w-full bg-slate-300 mr-3 p-7 rounded flex flex-row">
                 <div id="default-carousel" class="relative w-full" data-carousel="slide">
                     <!-- Carousel wrapper -->
@@ -72,27 +96,32 @@
                         <!-- Item 1 -->
                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
                             <img src="https://raw.githubusercontent.com/YANDR0/Proyecto-web/main/assets/xd/feedback.png"
-                                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                                alt="...">
                         </div>
                         <!-- Item 2 -->
                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
                             <img src="/docs/images/carousel/carousel-2.svg"
-                                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                                alt="...">
                         </div>
                         <!-- Item 3 -->
                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
                             <img src="https://raw.githubusercontent.com/YANDR0/Proyecto-web/main/assets/xd/feedback.png"
-                                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                                alt="...">
                         </div>
                         <!-- Item 4 -->
                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
                             <img src="/docs/images/carousel/carousel-4.svg"
-                                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                                alt="...">
                         </div>
                         <!-- Item 5 -->
                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
                             <img src="https://raw.githubusercontent.com/YANDR0/Proyecto-web/main/assets/xd/feedback.png"
-                                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                                alt="...">
                         </div>
                     </div>
                     <!-- Slider indicators -->
@@ -116,8 +145,8 @@
                             class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
                             <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
                                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M5 1 1 5l4 4" />
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M5 1 1 5l4 4" />
                             </svg>
                             <span class="sr-only">Previous</span>
                         </span>
@@ -129,8 +158,8 @@
                             class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
                             <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
                                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="m1 9 4-4-4-4" />
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m1 9 4-4-4-4" />
                             </svg>
                             <span class="sr-only">Next</span>
                         </span>
@@ -138,7 +167,7 @@
                 </div>
 
             </div>
-            
+
 
         </div>
         
@@ -148,26 +177,30 @@
 
             <!-- Focus of a product -->
             <div class="w-2/5 bg-slate-300 mr-3 p-7 rounded flex flex-col">
-                
+
                 <div class="rounded overflow-hidden bg-slate-500">
-                    <img class="w-full" src="https://raw.githubusercontent.com/YANDR0/Proyecto-web/main/assets/products/calendario.jpg" alt="Sunset in the mountains">
+                    <img class="w-full"
+                        src="https://raw.githubusercontent.com/YANDR0/Proyecto-web/main/assets/products/calendario.jpg"
+                        alt="Sunset in the mountains">
                     <div class="px-6 py-4 text-slate-300">
-                      <div class="font-bold text-xl mb-2">Mesa para jardín barroca con acabado de piedra</div>
-                      <p class=" text-base">
-                        Mesa ligera y portatil, de gran utilidad en lo que respecta a exteriores, apta para cualquier tipo de 
-                        evento o como simple adorno, material de gran resistencia que seguro aguantará el paso del tiempo
-                      </p>
-                      <br>
-                      <div class="inline-flex">
-                        <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l">
-                          Comprar
-                        </button>
-                        <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r">
-                          XD
-                        </button>
-                      </div>
+                        <div class="font-bold text-xl mb-2">Mesa para jardín barroca con acabado de piedra</div>
+                        <p class=" text-base">
+                            Mesa ligera y portatil, de gran utilidad en lo que respecta a exteriores, apta para
+                            cualquier tipo de
+                            evento o como simple adorno, material de gran resistencia que seguro aguantará el paso del
+                            tiempo
+                        </p>
+                        <br>
+                        <div class="inline-flex">
+                            <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l">
+                                Comprar
+                            </button>
+                            <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r">
+                                XD
+                            </button>
+                        </div>
                     </div>
-                  </div>
+                </div>
 
             </div>
 
@@ -236,7 +269,7 @@
                         src="https://raw.githubusercontent.com/YANDR0/Proyecto-web/main/assets/products/piramide.jpg">
                     <div class="w-3/4 justify-start p-6">
                         <h5 class="mb-2 text-xl font-medium text-neutral-50">
-                            Casa de campaña familiar para climas áridos 
+                            Casa de campaña familiar para climas áridos
                         </h5>
                         <p class="mb-4 text-base text-neutral-200">
                             Precio: 50

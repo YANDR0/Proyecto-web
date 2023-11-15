@@ -14,6 +14,7 @@
 
     <!-- Open the modal using ID.showModal() method -->
     <button class="btn pl-72" onclick="my_modal_5.showModal()">open modal</button>
+
     <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
         <div class="modal-box">
             <h3 class="font-bold text-lg">Hello!</h3>
@@ -191,14 +192,12 @@
                             tiempo
                         </p>
                         <br>
-                        <div class="inline-flex">
-                            <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l">
+                        <label class="flex justify-center rounded">
+                            <input type="text" class="text-black">
+                            <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4">
                                 Comprar
                             </button>
-                            <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r">
-                                XD
-                            </button>
-                        </div>
+                        </label>
                     </div>
                 </div>
 
@@ -285,8 +284,40 @@
 
 
         <div class="flex p-4 sm:ml-64">
-            <footer class="footer bg-slate-500 w-full bg-slate-300 mr-3 p-7 rounded flex flex-row">
-                Preguntas frecuentes :v
+            <footer class="footer bg-slate-500 w-full bg-slate-300 mr-3 p-7 rounded flex flex-col">
+                <ul class="list-disc ml-3">
+                    <li>
+                        <h1 class="font-semibold text-lg">¿Cuál es el apellido de obama?</h1>
+                        <p class="text-white">
+                            Si bien se han realizado una infinidad de estudios a lo largo del tiempo
+                            para poder aclarar dicha duda, en realidad pocas han sido las personas que
+                            han logrado obtener un resultado verdadero y más acorde a lo esperado, sin embargo
+                            podemos decir que lo más cercano a la respuesta es...
+                        </p><br>
+                    </li>
+                    <li>
+                        <h1 class="font-semibold text-lg">¿De que color eran las mangas blancas del chaleco de napoleón?</h1>
+                        <p class="text-white">
+                            Otro misterio que dificilmente será contestado en el corto plazo
+                        </p><br>
+                    </li>
+                    <li>
+                        <h1 class="font-semibold text-lg">¿Porque los precios son tan altos?</h1>
+                        <p class="text-white">
+                            El precio de los productos es tal debido a la fiabilidad y calidad de dichos articulos,
+                            podemos confirmar que todo lo vendido es 100% original y que no ha sido remplazado 
+                            con una copia o fraude ajeno a nuestras maneras
+                        </p><br>
+                    </li>
+                    <li>
+                        <h1 class="font-semibold text-lg">¿Para cuando habrá mayor disponibilidad?</h1>
+                        <p class="text-white">
+                            Lastimosamente contamos con un stock limitado que nos impide ofercer una mayor oferta
+                            de lo ofrecido, sin embargo, cada día puede revisar la página en busca de nuevas
+                            adiciones emocionantes recién obtenidas de nuestros provedores
+                        </p><br>
+                    </li>
+                </ul>
 
             </footer>
         </div>

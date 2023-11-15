@@ -15,9 +15,50 @@
 <body>
     <div class="inline">
 
+        <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+            <div class="relative p-4 w-full max-w-lg max-h-full dark:bg-gray-700">
+                <!-- Modal content -->
+                <div class="relative bg-gray-50 shadow dark:bg-gray-700">
+                    <!-- Modal header -->
+                    <div class="flex items-center justify-between p-4 md:p-5 border-b dark:border-gray-600">
+                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                            Compartir feedback
+                        </h3>
+    
+                    </div>
+                    <!-- Modal body -->
+                    <form action="#" class="p-4 md:p-5">
+                        <div class="grid gap-4 mb-4 grid-cols-2">
+                            <div class="col-span-2">
+                                <label for="name"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombre</label>
+                                <input type="text" name="name" id="name"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                    placeholder="Nombre de usuario" required="">
+                            </div>
+                            <div class="col-span-2">
+                                <label for="description"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Feedback</label>
+                                <textarea id="description" rows="4"
+                                    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    placeholder="Queja, chiste o sugerencia"></textarea>
+                            </div>
+                        </div>
+    
+                    </form>
+                    <div class="flex justify-center items-center p-4">
+                        <form method="dialog">
+                            <!-- if there is a button in form, it will close the modal -->
+                            <button class="btn text-white bg-red-600 py-2 px-4 rounded-md">Close</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </dialog>
+
         <!--Sidebar an menu of the page-->
         <aside id="default-sidebar"
-            class="fixed top-0 left-0 z-50 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
+            class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
             aria-label="Sidebar">
             <div class="h-full px-3 py-4 overflow-y-auto bg-gray-800 dark:bg-gray-800">
                 <ul class="space-y-4 font-medium">
@@ -48,7 +89,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="flex items-center p-2 text-gray-300 rounded-lg dark:text-white 
+                        <a href="index.html#FAQ" class="flex items-center p-2 text-gray-300 rounded-lg dark:text-white 
                         hover:bg-gray-700 group grid grid-cols-2 ml-2">
                             <div class="justify-self-start text-lg text-slate-300">Preguntas frecuentes</div>
                             <div><img
@@ -57,13 +98,17 @@
                         </a>
                     </li>
                     <li>
-                        <a href="feedback.html" class="flex items-center p-2 text-gray-300 rounded-lg dark:text-white 
-                        hover:bg-gray-700 group grid grid-cols-2 ml-2">
+
+                        <button id="openFeedbackModal"
+                            class="flex items-center p-2 text-gray-300 rounded-lg dark:text-white hover:bg-gray-700 group grid grid-cols-2 ml-2 w-full"
+                            onclick="document.getElementById('my_modal_5').showModal()">
                             <div class="justify-self-start text-lg text-slate-300">Feedback</div>
-                            <div><img
-                                    src="https://raw.githubusercontent.com/YANDR0/Proyecto-web/main/assets/sidebar/feedback.png"
-                                    style="max-height: 60px;" class="float-right mr-3"></div>
-                        </a>
+                            <div>
+                                <img src="https://raw.githubusercontent.com/YANDR0/Proyecto-web/main/assets/sidebar/feedback.png"
+                                    style="max-height: 60px;" class="float-right mr-3">
+                            </div>
+                        </button>
+
                     </li>
                 </ul>
             </div>

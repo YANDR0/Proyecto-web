@@ -12,44 +12,51 @@
 
 </head>
 
-<body style="background-image: url(https://raw.githubusercontent.com/YANDR0/Proyecto-web/main/assets/sidebar/tiles.jpg);">
+<body
+    style="background-image: url(https://raw.githubusercontent.com/YANDR0/Proyecto-web/main/assets/sidebar/tiles.jpg);">
     <div class="inline">
 
-        <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
-            <div class="relative p-4 w-full max-w-lg max-h-full dark:bg-gray-700">
+        <dialog id="feedbackImage" class="modal modal-bottom sm:modal-middle">
+            <img src="https://raw.githubusercontent.com/YANDR0/Proyecto-web/main/assets/xd/feedback.png" alt=""
+                class="w-full max-w-lg max-h-full">
+        </dialog>
+
+        <dialog id="feedbackModal" class="modal modal-bottom sm:modal-middle">
+            <div class="relative p-4 w-full max-w-lg max-h-full bg-gray-700">
                 <!-- Modal content -->
-                <div class="relative bg-gray-50 shadow dark:bg-gray-700">
+                <div class="relative bg-gray-50 shadow bg-gray-700">
                     <!-- Modal header -->
-                    <div class="flex items-center justify-between p-4 md:p-5 border-b dark:border-gray-600">
-                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                    <div class="flex items-center justify-between p-4 md:p-5 border-b border-gray-600">
+                        <h3 class="text-lg font-semibold text-gray-900 text-white">
                             Compartir feedback
                         </h3>
-    
+
                     </div>
                     <!-- Modal body -->
                     <form action="#" class="p-4 md:p-5">
                         <div class="grid gap-4 mb-4 grid-cols-2">
                             <div class="col-span-2">
                                 <label for="name"
-                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombre</label>
+                                    class="block mb-2 text-sm font-medium text-gray-900 text-white">Nombre</label>
                                 <input type="text" name="name" id="name"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-gray-600 border-gray-500 placeholder-gray-400 text-white focus:ring-primary-500 focus:border-primary-500"
                                     placeholder="Nombre de usuario" required="">
                             </div>
                             <div class="col-span-2">
                                 <label for="description"
-                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Feedback</label>
+                                    class="block mb-2 text-sm font-medium text-gray-900 text-white">Feedback</label>
                                 <textarea id="description" rows="4"
-                                    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 bg-gray-600 border-gray-500 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
                                     placeholder="Queja, chiste o sugerencia"></textarea>
                             </div>
                         </div>
-    
+
                     </form>
                     <div class="flex justify-center items-center p-4">
                         <form method="dialog">
                             <!-- if there is a button in form, it will close the modal -->
-                            <button class="btn text-white bg-red-600 py-2 px-4 rounded-md">Close</button>
+                            <button class="btn text-white bg-red-600 py-2 px-4 rounded-md"
+                                onclick="document.getElementById('feedbackImage').showModal()">Close</button>
                         </form>
                     </div>
                 </div>
@@ -101,7 +108,7 @@
 
                         <button id="openFeedbackModal"
                             class="flex items-center p-2 text-gray-300 rounded-lg dark:text-white hover:bg-gray-700 group grid grid-cols-2 ml-2 w-full"
-                            onclick="document.getElementById('my_modal_5').showModal()">
+                            onclick="document.getElementById('feedbackModal').showModal()">
                             <div class="justify-self-start text-lg text-slate-300">Feedback</div>
                             <div>
                                 <img src="https://raw.githubusercontent.com/YANDR0/Proyecto-web/main/assets/sidebar/feedback.png"
@@ -124,11 +131,12 @@
                     <div class="bg-slate-300 rounded p-4 shadow-md mb-4 flex justify-between items-center">
                         <!-- Contenido del Producto 1 -->
                         <div class="flex items-center">
-                            <img src="https://raw.githubusercontent.com/YANDR0/Proyecto-web/main/assets/products/macuahuitl.jpg" alt="Producto" class="mr-4 w-14 h-14 rounded">
+                            <img src="https://raw.githubusercontent.com/YANDR0/Proyecto-web/main/assets/products/macuahuitl.jpg"
+                                alt="Producto" class="mr-4 w-14 h-14 rounded">
                             <div>
                                 <h2 class="text-lg font-semibold">Cuchillo para mantequilla</h2>
                                 <p class="text-gray-900 w-2/3">
-                                    Práctico cuchillo para mantequilla con la capacidad de atravesar incluso 
+                                    Práctico cuchillo para mantequilla con la capacidad de atravesar incluso
                                     las recién obtenidas del congelador - Advertencia(Usos limitados)
                                 </p>
                             </div>
@@ -143,11 +151,12 @@
                     <div class="bg-slate-300 rounded p-4 shadow-md mb-4 flex justify-between items-center">
                         <!-- Contenido del Producto 2 -->
                         <div class="flex items-center">
-                            <img src="https://raw.githubusercontent.com/YANDR0/Proyecto-web/main/assets/products/fosil.jpg" alt="Producto" class="mr-4 w-14 h-14 rounded">
+                            <img src="https://raw.githubusercontent.com/YANDR0/Proyecto-web/main/assets/products/fosil.jpg"
+                                alt="Producto" class="mr-4 w-14 h-14 rounded">
                             <div>
                                 <h2 class="text-lg font-semibold">Centro de mesa rústico</h2>
                                 <p class="text-gray-900 w-2/3">
-                                    Centro de mesa con un gran porte y presencia, capaz de poner en duda 
+                                    Centro de mesa con un gran porte y presencia, capaz de poner en duda
                                     los conocimientos antiguos acerca de las reglas naturales
                                 </p>
                             </div>
@@ -157,33 +166,34 @@
                             <button class="text-white bg-red-600 py-2 px-4 rounded-md">Eliminar</button>
                         </div>
                     </div>
-                    </div>
-                </div>
-
-                <!-- Resumen de Compra -->
-                <div class="w-full relative z-10 flex justify-center text-gray-200">
-                    <div class=" bg-slate-700 rounded p-4 shadow-md">
-                        <h2 class="text-xl font-semibold mb-4">Resumen de Compra</h2>
-                        <div class="flex justify-between mb-2">
-                            <p class="text-gray-200">Producto 1 x 1</p>
-                            <p class="text-lg font-semibold">$20.00</p>
-                        </div>
-                        <div class="flex justify-between mb-2">
-                            <p class="text-gray-200">Producto 2 x 3</p>
-                            <p class="text-lg font-semibold">$90.00</p>
-                        </div>
-                        <br><div class="flex justify-between mb-2 text-xl">
-                            <p class="text-gray-200">Total:</p>
-                            <p class="text-lg font-semibold">$50.00</p>
-                        </div>
-                        <div class=" flex items-center justify-center">
-                            <button class="bg-green-500 text-black py-2 px-4 rounded-md">Realizar Compra</button>
-                        </div>
-                        
-                    </div>
                 </div>
             </div>
-        </main>
+
+            <!-- Resumen de Compra -->
+            <div class="w-full relative z-10 flex justify-center text-gray-200">
+                <div class=" bg-slate-700 rounded p-4 shadow-md">
+                    <h2 class="text-xl font-semibold mb-4">Resumen de Compra</h2>
+                    <div class="flex justify-between mb-2">
+                        <p class="text-gray-200">Producto 1 x 1</p>
+                        <p class="text-lg font-semibold">$20.00</p>
+                    </div>
+                    <div class="flex justify-between mb-2">
+                        <p class="text-gray-200">Producto 2 x 3</p>
+                        <p class="text-lg font-semibold">$90.00</p>
+                    </div>
+                    <br>
+                    <div class="flex justify-between mb-2 text-xl">
+                        <p class="text-gray-200">Total:</p>
+                        <p class="text-lg font-semibold">$50.00</p>
+                    </div>
+                    <div class=" flex items-center justify-center">
+                        <button class="bg-green-500 text-black py-2 px-4 rounded-md">Realizar Compra</button>
+                    </div>
+
+                </div>
+            </div>
+    </div>
+    </main>
     </div>
 
 </body>

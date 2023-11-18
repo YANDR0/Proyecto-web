@@ -9,9 +9,16 @@
 
 </head>
 
-<body style="background-image: url(https://raw.githubusercontent.com/YANDR0/Proyecto-web/main/assets/sidebar/tiles.jpg);"> <!--In case we want a background image-->
+<body
+    style="background-image: url(https://raw.githubusercontent.com/YANDR0/Proyecto-web/main/assets/sidebar/tiles.jpg);">
+    <!--In case we want a background image-->
 
-    <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+    <dialog id="feedbackImage" class="modal modal-bottom sm:modal-middle">
+        <img src="https://raw.githubusercontent.com/YANDR0/Proyecto-web/main/assets/xd/feedback.png" alt=""
+            class="w-full max-w-lg max-h-full">
+    </dialog>
+
+    <dialog id="feedbackModal" class="modal modal-bottom sm:modal-middle">
         <div class="relative p-4 w-full max-w-lg max-h-full bg-gray-700">
             <!-- Modal content -->
             <div class="relative bg-gray-50 shadow bg-gray-700">
@@ -45,7 +52,8 @@
                 <div class="flex justify-center items-center p-4">
                     <form method="dialog">
                         <!-- if there is a button in form, it will close the modal -->
-                        <button class="btn text-white bg-red-600 py-2 px-4 rounded-md">Close</button>
+                        <button class="btn text-white bg-red-600 py-2 px-4 rounded-md"
+                            onclick="document.getElementById('feedbackImage').showModal()">Close</button>
                     </form>
                 </div>
             </div>
@@ -100,7 +108,7 @@
 
                         <button id="openFeedbackModal"
                             class="flex items-center p-2 text-gray-300 rounded-lg dark:text-white hover:bg-gray-700 group grid grid-cols-2 ml-2 w-full"
-                            onclick="document.getElementById('my_modal_5').showModal()">
+                            onclick="document.getElementById('feedbackModal').showModal()">
                             <div class="justify-self-start text-lg text-slate-300">Feedback</div>
                             <div>
                                 <img src="https://raw.githubusercontent.com/YANDR0/Proyecto-web/main/assets/sidebar/feedback.png"
@@ -189,12 +197,11 @@
 
             <!-- Focus of a product -->
             <div class="w-2/5 bg-slate-300 mr-3 p-7 rounded flex flex-col h-fit">
-
                 <div class="rounded overflow-hidden bg-slate-600">
                     <img class="w-full"
                         src="https://raw.githubusercontent.com/YANDR0/Proyecto-web/main/assets/products/calendario.jpg"
                         alt="Sunset in the mountains">
-                    <div class="px-6 py-4 text-slate-300">
+                    <div class="px-6 py-4 flex flex-col text-slate-300">
                         <div class="font-bold text-xl mb-2">Mesa para jardín barroca con acabado de piedra</div>
                         <p class=" text-base">
                             Mesa ligera y portatil, de gran utilidad en lo que respecta a exteriores, apta para
@@ -203,12 +210,9 @@
                             tiempo
                         </p>
                         <br>
-                        <div class="flex rounded-lg shadow-sm">
-                            <input type="number" id="hs-trailing-button-add-on-multiple-add-ons"
-                                name="hs-trailing-button-add-on-multiple-add-ons"
-                                class="py-3 px-4 block w-full border-gray-200 shadow-sm rounded-s-md text-sm focus:z-10 focus:border-blue-500 focus:z-10 focus:ring-blue-500 text-gray-900">
+                        <div class="flex justify-center items-center rounded-lg shadow-sm">
                             <button type="button"
-                                class="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-e-md border border-transparent bg-blue-500 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
+                                class="py-3 px-4 gap-x-2 text-sm font-semibold rounded-md border border-transparent bg-blue-500 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
                                 Comprar
                             </button>
                         </div>

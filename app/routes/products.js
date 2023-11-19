@@ -1,9 +1,11 @@
 const express = require("express");
 const router = express.Router();
+const esquemas = require("../controllers/schemas");
 
 //  ###GET products 
 router.get("/", (req, res) => {
-    return res.status(200).send("Probando ando");
+    console.log(sUser());
+    return res.status(200).send("Vamos viendo");
 })
 
 module.exports = router;

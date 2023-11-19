@@ -1,3 +1,4 @@
+const mongoose = require("mongoose");
 
 //SCHEMAS
 function sUser (){
@@ -23,8 +24,7 @@ function sUser (){
             required: true
         }
     });
-    return 20;
-    //return mongoose.model("users", userSchema);
+    return mongoose.model("users", userSchema);
 }
 
 function sProduct (){
@@ -50,9 +50,13 @@ function sProduct (){
             required: true
         }
     });
+    return mongoose.model("products", productSchema);
+}
+
+function coso (){
     return 10;
-    //return mongoose.model("products", productSchema);
 }
 
 exports.sUser = sUser;
 exports.sProduct = sProduct; 
+exports.coso = coso;

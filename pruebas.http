@@ -1,4 +1,3 @@
 
-
 ### GET products                    Ver todos los productos       
 GET http://localhost:3000/products/

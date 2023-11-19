@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-//const cors = require("cors");
+const cors = require("cors");
 const express = require('express');
 const router = require('./app/controllers/router');
 const puerto = 3000;

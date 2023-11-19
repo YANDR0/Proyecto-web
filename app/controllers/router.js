@@ -17,5 +17,7 @@ function validateAdmin(req, res, next){
 router.get('/', (req, res) => res.sendFile(path.resolve(__dirname + "/../views/home.html")));
 router.get('/home', (req, res) => res.sendFile(path.resolve(__dirname + "/../views/home.html")));
 router.get('/shopping_cart', (req, res) => res.sendFile(path.resolve(__dirname + "/../views/shoppingKart.html")));
+router.get('/user_profile', (req, res) => res.sendFile(path.resolve(__dirname + "/../views/userProfile.html")));
+
 
 module.exports = router;

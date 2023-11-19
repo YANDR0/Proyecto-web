@@ -30,8 +30,64 @@ db.on('connected', () => {
 mongoose.connect(mongoConnection, {useNewUrlParser: true});
 
 
+//SCHEMAS
+let userSchema = mongoose.Schema({
+        nombre: {
+            type: String,
+            required: true
+        },
+        correo: {
+            type: String,
+            required: true
+        },
+        phone: {
+            type: String,
+            required: true
+        },
+        image: {
+            type: String,
+            required: true
+        },
+        pass: {
+            type: String,
+            required: true
+        }
+});
+
+let productSchema = mongoose.Schema({
+        name: {
+            type: String,
+            required: true
+        },
+        description: {
+            type: String,
+            required: true
+        },
+        price: {
+            type: String,
+            required: true
+        },
+        stock: {
+            type: String,
+            required: true
+        },
+        image: {
+            type: String,
+            required: true
+        }
+});
+
+var User = mongoose.model("users", userSchema);
+
+var Product = mongoose.model("products", productSchema);
+
+
 //CONECTION TO PORT
 app.listen(puerto, () => {
     console.log("Página del proyecto iniciada en el puerto: " + puerto);
 });
+
+
+exports.User = User;
+exports.Product = Product;
 

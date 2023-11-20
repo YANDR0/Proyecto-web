@@ -17,14 +17,9 @@ function createProduct(json){
     let newUser = checkProducts(json);
     if(!newUser)
         return false;
-
-        /*
     let user = schems.Product(newUser);
-    user.save().then((doc) => console.log(("Usuario creado: " + doc)));*/
-}
-
-function getProducts(){
-    return schems.Product.find({}).then((docs) => {return docs}).catch((err) => console.log(err));
+    user.save().then((doc) => console.log(("Usuario creado: " + doc)));
+    return newUser;
 }
 
 function updateProduct(json, id){
@@ -42,7 +37,6 @@ function deleteProduct(id){
 }
 
 exports.createProduct = createProduct;
-exports.getProducts = getProducts;
 exports.updateProduct = updateProduct;
 exports.deleteProduct = deleteProduct;
 

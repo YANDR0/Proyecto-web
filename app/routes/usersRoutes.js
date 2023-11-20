@@ -1,13 +1,14 @@
 const express = require("express");
 const router = express.Router();
 const functionsUser = require("../controllers/users")
+const schems = require("../../server");
 
-//  ### POST users
+//  ### POST users              LISTO
 router.post("/", (req, res) => {
     console.log("Crear usuario");
     const product = req.body;
     let a = functionsUser.createUser(product);
-    console.log(a);
+    res.send(a);
 });
 
 //  ### PUT users
@@ -18,11 +19,10 @@ router.put("/", (req, res) => {
     console.log("Actualizar usuario");
 })
 
-//  ### GET users
+//  ### GET users               LISTO
 router.get("/", (req, res) => {
-    /*
-    functionsUser.getUsers();*/
     console.log("Obtener usuarios");
+    schems.User.find({}).then((docs) => res.send(docs)).catch((err) => console.log(err));
 })
 
 //  ### DELETE users

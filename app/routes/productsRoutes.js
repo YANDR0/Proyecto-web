@@ -2,14 +2,15 @@
 const express = require("express");
 const router = express.Router();
 const functionsAdmin = require("../controllers/products")
+const schems = require("../../server");
 
 
 //  ### POST admin/products
 router.post("/", (req, res) => {
-    /*
-    const product = req.body;
-    functionsAdmin.createProduct(product);*/
     console.log("Crear producto");
+    const product = req.body;
+    let a = functionsAdmin.createProduct(product);
+    res.send(a);
 });
 
 router.put("/", (req, res) => {
@@ -21,9 +22,8 @@ router.put("/", (req, res) => {
 })
 
 router.get("/", (req, res) => {
-    /*
-    functionsAdmin.getProducts();*/
     console.log("Obtener producto");
+    schems.Product.find({}).then((docs) => res.send(docs)).catch((err) => console.log(err));
 })
 
 router.delete("/", (req, res) => {

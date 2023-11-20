@@ -22,10 +22,6 @@ function createUser(json){
     return newUser;
 }
 
-function getUsers(){
-    return schems.User.find({}).then((docs) => {return docs}).catch((err) => console.log(err));
-}
-
 function updateUser(json, id){
     let newUser = checkUser(json);
     if(!newUser)
@@ -42,7 +38,6 @@ function deleteUser(id){
 }
 
 exports.createUser = createUser;
-exports.getUsers = getUsers;
 exports.updateUser = updateUser;
 exports.deleteUser = deleteUser;
 

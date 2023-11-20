@@ -11,11 +11,11 @@ content-type: application/json
 x-auth: admin
 
 {
-    "name": "pruebaUsuario",
-    "mail": "prueba@gmail.com",
-    "phone": "1234567890",
-    "image": "fotoUsuario",
-    "pass": "1234"
+    "name": "XDDDDDDDDDDDDDD",
+    "mail": "vamo@xd.com",
+    "phone": "9832839120",
+    "image": "photophoto",
+    "pass": "fghwsfhdbfh12"
 }
 
 ###
@@ -24,6 +24,7 @@ content-type: application/json
 x-auth: admin
 
 {
+    "id": "",
     "name": "pruebaUsuario123",
     "mail": "prueba123@gmail.com",
     "phone": "0987654321",

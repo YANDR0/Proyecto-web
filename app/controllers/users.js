@@ -39,3 +39,7 @@ function deleteUser(id){
 
 }
 
+module.exports = createUser;
+module.exports = getUsers;
+module.exports = updateUser;
+module.exports = deleteUser;

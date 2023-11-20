@@ -1,3 +1,74 @@
 
-### GET products                    Ver todos los productos       
-GET http://localhost:3000/products/
+//======================== PRODUCTOS ========================
+
+###
+GET http://localhost:3000/admin/products/user_profile/
+x-auth: admin
+
+###
+POST http://localhost:3000/admin/products/user_profile/
+content-type: application/json
+x-auth: admin
+
+{
+    "name": "pruebaUsuario",
+    "mail": "prueba@gmail.com",
+    "phone": "1234567890",
+    "image": "fotoUsuario",
+    "pass": "1234"
+}
+
+###
+PUT http://localhost:3000/admin/products/user_profile/
+content-type: application/json
+x-auth: admin
+
+{
+    "name": "pruebaUsuario123",
+    "mail": "prueba123@gmail.com",
+    "phone": "0987654321",
+    "image": "fotoUsuario123",
+    "pass": "0987"
+}
+
+###
+DELETE http://localhost:3000/admin/products/user_profile/1
+x-auth: admin
+
+//======================== USUARIOS ========================
+
+###
+GET http://localhost:3000/admin/products/user_profile/
+x-auth: admin
+
+
+###
+POST http://localhost:3000/products/user_profile/
+content-type: application/json
+x-auth: admin
+
+
+{
+    "name": "pruebaProducto",
+    "description": "Esto es una prueba",
+    "price": "5",
+    "stock": "20",
+    "image": "fotoProducto"
+}
+
+###
+PUT http://localhost:3000/admin/products/user_profile/
+content-type: application/json
+x-auth: admin
+
+{
+    "name": "producto chido",
+    "description": "una descripcion de un producto",
+    "price": "3",
+    "stock": "100",
+    "image": "fotoProducto123"
+}
+
+###
+DELETE http://localhost:3000/admin/products/user_profile/1
+x-auth: admin

@@ -1,11 +1,11 @@
 const express = require('express');
 const path = require('path');
 const productRouter = require('../routes/products')
-//const adminProductRouter = require('../routes/admin_products')
+const adminProductRouter = require('../routes/adminProducts')
 const router = express.Router();
 
 router.use('/products', productRouter);
-//router.use('/admin/products', validateAdmin, adminProductRouter);
+router.use('/admin/products', validateAdmin, adminProductRouter);
 
 function validateAdmin(req, res, next){
     const header = req.get("x-auth");

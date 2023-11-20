@@ -18,8 +18,10 @@ function createUser(json){
     if(!newUser)
         return false;
 
+    console.log(newUser);
+    /*
     let user = schems.User(newUser);
-    user.save().then((doc) => console.log(("Usuario creado: " + doc)));
+    user.save().then((doc) => console.log(("Usuario creado: " + doc)));*/
 }
 
 function getUsers(){
@@ -30,8 +32,10 @@ function updateUser(json, id){
     let newUser = checkUser(json);
     if(!newUser)
         return false;
-    schems.User.findByIdAndUpdate(id, object_to_update, {new: true}).then((doc => 
-        console.log("Usuario actualizado"))).catch((err) => console.log(err));
+    console.log(newUser);
+    /*
+    schems.User.findByIdAndUpdate(id, newUser, {new: true}).then((doc => 
+        console.log("Usuario actualizado"))).catch((err) => console.log(err));*/
 }
 
 function deleteUser(id){
@@ -39,7 +43,13 @@ function deleteUser(id){
 
 }
 
+exports.createUser = createUser;
+exports.getUsers = getUsers;
+exports.updateUser = updateUser;
+exports.deleteUser = deleteUser;
+
+/*
 module.exports = createUser;
 module.exports = getUsers;
 module.exports = updateUser;
-module.exports = deleteUser;
+module.exports = deleteUser;*/

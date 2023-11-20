@@ -1,12 +1,12 @@
 
-//======================== PRODUCTOS ========================
+//======================== USUARIOS ========================
 
 ###
-GET http://localhost:3000/admin/products/user_profile/
+GET http://localhost:3000/users/
 x-auth: admin
 
 ###
-POST http://localhost:3000/admin/products/user_profile/
+POST http://localhost:3000/users/
 content-type: application/json
 x-auth: admin
 
@@ -19,7 +19,7 @@ x-auth: admin
 }
 
 ###
-PUT http://localhost:3000/admin/products/user_profile/
+PUT http://localhost:3000/users/
 content-type: application/json
 x-auth: admin
 
@@ -32,21 +32,20 @@ x-auth: admin
 }
 
 ###
-DELETE http://localhost:3000/admin/products/user_profile/1
+DELETE http://localhost:3000/users/
 x-auth: admin
 
-//======================== USUARIOS ========================
+//======================== PRODUCTOS ========================
 
 ###
-GET http://localhost:3000/admin/products/user_profile/
+GET http://localhost:3000/products/
 x-auth: admin
 
 
 ###
-POST http://localhost:3000/products/user_profile/
+POST http://localhost:3000/products/
 content-type: application/json
 x-auth: admin
-
 
 {
     "name": "pruebaProducto",
@@ -57,7 +56,7 @@ x-auth: admin
 }
 
 ###
-PUT http://localhost:3000/admin/products/user_profile/
+PUT http://localhost:3000/products/
 content-type: application/json
 x-auth: admin
 
@@ -70,5 +69,5 @@ x-auth: admin
 }
 
 ###
-DELETE http://localhost:3000/admin/products/user_profile/1
+DELETE http://localhost:3000/products/
 x-auth: admin

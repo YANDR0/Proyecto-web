@@ -1,32 +1,36 @@
 
 const express = require("express");
 const router = express.Router();
-const schems = require("../../server");
+const functionsAdmin = require("../controllers/products")
+const functionsUser = require("../controllers/users")
 
-//  ###GET products 
-router.get("/", (req, res) => {
-    console.log(schems.User);
-    return res.status(200).send("Vamos viendo");
-})
-
-//  ### POST users
-router.post("/user_profile", (req, res) => {
+//  ### POST admin/products
+router.post("/", (req, res) => {
+    /*
     const product = req.body;
-    functionsUser.createUser(product);
+    functionsAdmin.createProduct(product);*/
+    console.log("Crear producto");
 });
 
-router.put("/user_profile", (req, res) => {
+router.put("/", (req, res) => {
+    /*
     const product = req.body;
-    functionsUser.updateUser(product, product.id);
+    const id = req.params;
+    functionsAdmin.updateProduct(product, id);*/
+    console.log("Actualizar producto");
 })
 
-router.get("/user_profile", (req, res) => {
-    functionsUser.getUsers();
+router.get("/", (req, res) => {
+    /*
+    functionsAdmin.getProducts();*/
+    console.log("Obtener producto");
 })
 
-router.delete("/user_profile", (req, res) => {
-    const product = req.body;
-    functionsUser.deleteUser(product.id);
+router.delete("/", (req, res) => {
+    /*
+    const id = req.params;
+    functionsAdmin.deleteProduct(id);*/
+    console.log("Borrar producto");
 })
 
 module.exports = router;

@@ -26,22 +26,16 @@ function updateProduct(json, id){
     let newUser = checkProducts(json);
     if(!newUser)
         return false;
-    /*
     schems.Product.findByIdAndUpdate(id, newUser, {new: true}).then((doc => 
-        console.log("Usuario actualizado"))).catch((err) => console.log(err));*/
+        console.log("Usuario actualizado"))).catch((err) => console.log(err));
+    return newUser;
 }
 
 function deleteProduct(id){
-    schems.Product.findByIdAndDelete(id).then((doc) => console.log("Usuario eliminado")).catch((err) => console.log(err));
-
+    schems.Product.findByIdAndDelete(id).then((doc) => console.log("Producto eliminado")).catch((err) => console.log(err));
 }
 
 exports.createProduct = createProduct;
 exports.updateProduct = updateProduct;
 exports.deleteProduct = deleteProduct;
 
-/*
-module.exports = createProduct;
-module.exports = getProducts;
-module.exports = updateProduct;
-module.exports = deleteProduct;*/

@@ -11,12 +11,12 @@ router.post("/", (req, res) => {
     res.send(a);
 });
 
-//  ### PUT users
+//  ### PUT users               LISTO
 router.put("/", (req, res) => {
-    /*
-    const product = req.body;
-    functionsUser.updateUser(product, product.id);*/
     console.log("Actualizar usuario");
+    const product = req.body;
+    let a = functionsUser.updateUser(product, product.id);
+    res.send(a);
 })
 
 //  ### GET users               LISTO
@@ -27,10 +27,9 @@ router.get("/", (req, res) => {
 
 //  ### DELETE users
 router.delete("/", (req, res) => {
-    /*
-    const product = req.body;
-    functionsUser.deleteUser(product.id);*/
     console.log("Borrar usuario");
+    const product = req.body;
+    functionsUser.deleteUser(product.id);
 })
 
 module.exports = router;

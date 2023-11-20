@@ -1,11 +1,11 @@
 
 //======================== USUARIOS ========================
 
-###
+### Obtener usuarios
 GET http://localhost:3000/users/
 x-auth: admin
 
-###
+### Crear usuario
 POST http://localhost:3000/users/
 content-type: application/json
 x-auth: admin
@@ -18,13 +18,13 @@ x-auth: admin
     "pass": "fghwsfhdbfh12"
 }
 
-###
+### Actualizar usuario
 PUT http://localhost:3000/users/
 content-type: application/json
 x-auth: admin
 
 {
-    "id": "",
+    "id": "655bb513316f0df8be7574ba",
     "name": "pruebaUsuario123",
     "mail": "prueba123@gmail.com",
     "phone": "0987654321",
@@ -32,18 +32,23 @@ x-auth: admin
     "pass": "0987"
 }
 
-###
+### Borrar usuario
 DELETE http://localhost:3000/users/
+content-type: application/json
 x-auth: admin
+
+{
+    "id": "655bb513316f0df8be7574ba"
+}
 
 //======================== PRODUCTOS ========================
 
-###
+### Obtener productos
 GET http://localhost:3000/products/
 x-auth: admin
 
 
-###
+### Crear productos
 POST http://localhost:3000/products/
 content-type: application/json
 x-auth: admin
@@ -56,12 +61,13 @@ x-auth: admin
     "image": "fotoProducto"
 }
 
-###
+### Actualizar productos
 PUT http://localhost:3000/products/
 content-type: application/json
 x-auth: admin
 
 {
+    "id": "655bcaf14bcb45634a9eb268",
     "name": "producto chido",
     "description": "una descripcion de un producto",
     "price": "3",
@@ -69,6 +75,11 @@ x-auth: admin
     "image": "fotoProducto123"
 }
 
-###
+### Borrar productos
 DELETE http://localhost:3000/products/
+content-type: application/json
 x-auth: admin
+
+{
+    "id": "655bcaf14bcb45634a9eb268"
+}

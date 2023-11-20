@@ -26,23 +26,15 @@ function updateUser(json, id){
     let newUser = checkUser(json);
     if(!newUser)
         return false;
-    console.log(newUser);
-    /*
     schems.User.findByIdAndUpdate(id, newUser, {new: true}).then((doc => 
-        console.log("Usuario actualizado"))).catch((err) => console.log(err));*/
+        console.log("Usuario actualizado"))).catch((err) => console.log(err));
+    return newUser;
 }
 
 function deleteUser(id){
     schems.User.findByIdAndDelete(id).then((doc) => console.log("Usuario eliminado")).catch((err) => console.log(err));
-
 }
 
 exports.createUser = createUser;
 exports.updateUser = updateUser;
 exports.deleteUser = deleteUser;
-
-/*
-module.exports = createUser;
-module.exports = getUsers;
-module.exports = updateUser;
-module.exports = deleteUser;*/

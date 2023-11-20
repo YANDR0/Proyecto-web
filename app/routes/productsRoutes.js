@@ -14,11 +14,10 @@ router.post("/", (req, res) => {
 });
 
 router.put("/", (req, res) => {
-    /*
-    const product = req.body;
-    const id = req.params;
-    functionsAdmin.updateProduct(product, id);*/
     console.log("Actualizar producto");
+    const product = req.body;
+    let a = functionsAdmin.updateProduct(product, product.id);
+    res.send(a);
 })
 
 router.get("/", (req, res) => {
@@ -27,10 +26,9 @@ router.get("/", (req, res) => {
 })
 
 router.delete("/", (req, res) => {
-    /*
-    const id = req.params;
-    functionsAdmin.deleteProduct(id);*/
     console.log("Borrar producto");
+    const product = req.body;
+    functionsAdmin.deleteProduct(product.id);
 })
 
 module.exports = router;

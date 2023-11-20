@@ -32,11 +32,11 @@ mongoose.connect(mongoConnection, {useNewUrlParser: true});
 
 //SCHEMAS
 let userSchema = mongoose.Schema({
-        nombre: {
+        name: {
             type: String,
             required: true
         },
-        correo: {
+        mail: {
             type: String,
             required: true
         },

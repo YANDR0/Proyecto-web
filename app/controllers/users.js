@@ -4,12 +4,12 @@ function checkUser(json){
     let keys = ["name", "mail", "phone", "image", "pass"];
     let newUser = {};
 
-    for(let i in keys){
-        if(json[i] != undefined)
+    for(let i of keys){
+        if(json[i] == undefined)
             return false;
         newUser[i] = json[i]; 
     }
-
+    
     return newUser;
 }
 
@@ -17,11 +17,9 @@ function createUser(json){
     let newUser = checkUser(json);
     if(!newUser)
         return false;
-
-    console.log(newUser);
-    /*
     let user = schems.User(newUser);
-    user.save().then((doc) => console.log(("Usuario creado: " + doc)));*/
+    user.save().then((doc) => console.log(("Usuario creado: " + doc)));
+    return newUser;
 }
 
 function getUsers(){

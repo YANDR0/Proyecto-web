@@ -2,7 +2,7 @@
 const express = require("express");
 const router = express.Router();
 const functionsAdmin = require("../controllers/products")
-const functionsUser = require("../controllers/users")
+
 
 //  ### POST admin/products
 router.post("/", (req, res) => {

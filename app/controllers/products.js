@@ -4,8 +4,8 @@ function checkProducts(json){
     let keys = ["name", "description", "price", "stock", "image"];
     let newUser = {};
 
-    for(let i in keys){
-        if(json[i] != undefined)
+    for(let i of keys){
+        if(json[i] == undefined)
             return false;
         newUser[i] = json[i]; 
     }

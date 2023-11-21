@@ -115,14 +115,19 @@ document.getElementById('addToCart').addEventListener('click', () => {
     let carritoArr = obtenerCarrito(); // Obtener el carrito actual
 
     var quantityToAdd = document.querySelector("#addToCartInput").value;
-    console.log("quantity: " + quantityToAdd);
-    console.log(curr);
+    if(quantityToAdd < 1)
+        return;
+
+    let index = obtenerCarrito.findIndex((p) => p._id == curr._id);
 
     // Crear un nuevo objeto JSON para el producto actual
     curr["quantity"] = quantityToAdd;
 
     // Agregar el nuevo producto al carrito
-    carritoArr.push(curr);
+    if(index > 0)
+        carrito[index] = curr;
+    else
+        carritoArr.push(curr);
 
     // Almacenar el carrito actualizado en el sessionStorage
     sessionStorage.setItem('carrito', JSON.stringify(carritoArr));

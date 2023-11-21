@@ -50,7 +50,7 @@ function productsToDisplay(itemsToDisplay) {
                         <div class="flex justify-center items-center rounded-lg shadow-sm">
                             <button
                                 class="py-3 px-4 gap-x-2 text-sm font-semibold rounded-md border border-transparent bg-blue-500 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                                onclick="focusProductsFunctions('${itemsToDisplay[0]._id}', '${itemsToDisplay[0].name}', '${itemsToDisplay[0].description}', '${itemsToDisplay[0].price}', '${itemsToDisplay[0].stock}', '${itemsToDisplay[0].image}')">
+                                onclick="focusProductsFunctions('${itemsToDisplay[0]._id}')">
                                 Comprar
                             </button>
                         </div>
@@ -115,19 +115,22 @@ document.getElementById('addToCart').addEventListener('click', () => {
     let carritoArr = obtenerCarrito(); // Obtener el carrito actual
 
     var quantityToAdd = document.querySelector("#addToCartInput").value;
-    if(quantityToAdd < 1)
+    if(quantityToAdd < 1){
+        alert("No se pueden ingresar negativos o 0");
         return;
+    }
 
-    let index = obtenerCarrito.findIndex((p) => p._id == curr._id);
+    let index = carritoArr.findIndex((p) => p._id == curr._id);
 
     // Crear un nuevo objeto JSON para el producto actual
     curr["quantity"] = quantityToAdd;
 
     // Agregar el nuevo producto al carrito
-    if(index > 0)
-        carrito[index] = curr;
+    if(index == -1)
+        carritoArr.push(curr);  
     else
-        carritoArr.push(curr);
+        carritoArr[index] = curr;
+        
 
     // Almacenar el carrito actualizado en el sessionStorage
     sessionStorage.setItem('carrito', JSON.stringify(carritoArr));

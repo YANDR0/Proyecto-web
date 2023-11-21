@@ -26,12 +26,12 @@
                 </div>
                 <!-- Modal body -->
                 <div class="flex items-center justify-between p-4 md:p-5 border-b border-gray-600">
-                    <input type="number" placeholder="Cantidad">
+                    <input type="number" placeholder="Cantidad" id="addToCartInput">
                 </div>
                 <div class="flex justify-center items-center p-4">
                     <form method="dialog">
                         <!-- if there is a button in form, it will close the modal -->
-                        <button class="btn text-white bg-blue-500 py-2 px-4 rounded-md">Comprar</button>
+                        <button class="btn text-white bg-blue-500 py-2 px-4 rounded-md" id="addToCart">Comprar</button>
                     </form>
                 </div>
             </div>
@@ -222,25 +222,7 @@
 
             <!-- Focus of a product -->
             <div class="w-2/5 bg-slate-300 mr-3 p-7 rounded flex flex-col h-fit" id="focusedProduct">
-                <div class="rounded overflow-hidden bg-slate-600">
-                    <img class="w-full"
-                    src=""
-                    alt="Sunset in the mountains">
-                    <div class="px-6 py-4 flex flex-col text-slate-300">
-                        <div class="font-bold text-xl mb-2">Selecciona el producto que quieras ver a detalle</div>
-                            <p class=" text-base">
-                                <br><br><br>
-                            </p>
-                            <br>
-                            <div class="flex justify-center items-center rounded-lg shadow-sm">
-                            <button
-                                class="py-3 px-4 gap-x-2 text-sm font-semibold rounded-md border border-transparent bg-blue-500 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                                onclick="document.getElementById('buyProduct').showModal()">
-                                Comprar
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
 
 

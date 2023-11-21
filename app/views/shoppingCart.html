@@ -125,77 +125,18 @@
         <main class="flex-1 overflow-x-hidden overflow-y-auto pl-72">
             <div class="container mx-auto mt-8 flex flex-col">
                 <!-- Carrito de Compras -->
-                <div class="w-full flex flex-col mr-4 relative z-10 pr-10">
-
-                    <!-- Producto 1 -->
-                    <div class="bg-slate-300 rounded p-4 shadow-md mb-4 flex justify-between items-center">
-                        <!-- Contenido del Producto 1 -->
-                        <div class="flex items-center">
-                            <img src="https://raw.githubusercontent.com/YANDR0/Proyecto-web/main/assets/products/macuahuitl.jpg"
-                                alt="Producto" class="mr-4 w-14 h-14 rounded">
-                            <div>
-                                <h2 class="text-lg font-semibold">Cuchillo para mantequilla</h2>
-                                <p class="text-gray-900 w-2/3">
-                                    Práctico cuchillo para mantequilla con la capacidad de atravesar incluso
-                                    las recién obtenidas del congelador - Advertencia(Usos limitados)
-                                </p>
-                            </div>
-                        </div>
-                        <div class="flex items-center">
-                            <p class="text-gray-600 mr-4">$20.00</p>
-                            <button class="text-white bg-red-600 py-2 px-4 rounded-md">Eliminar</button>
-                        </div>
-                    </div>
-
-                    <!-- Producto 2 -->
-                    <div class="bg-slate-300 rounded p-4 shadow-md mb-4 flex justify-between items-center">
-                        <!-- Contenido del Producto 2 -->
-                        <div class="flex items-center">
-                            <img src="https://raw.githubusercontent.com/YANDR0/Proyecto-web/main/assets/products/fosil.jpg"
-                                alt="Producto" class="mr-4 w-14 h-14 rounded">
-                            <div>
-                                <h2 class="text-lg font-semibold">Centro de mesa rústico</h2>
-                                <p class="text-gray-900 w-2/3">
-                                    Centro de mesa con un gran porte y presencia, capaz de poner en duda
-                                    los conocimientos antiguos acerca de las reglas naturales
-                                </p>
-                            </div>
-                        </div>
-                        <div class="flex items-center">
-                            <p class="text-gray-600 mr-4">$30.00</p>
-                            <button class="text-white bg-red-600 py-2 px-4 rounded-md">Eliminar</button>
-                        </div>
-                    </div>
+                <div class="w-full flex flex-col mr-4 relative z-10 pr-10" id="mainCart">
                 </div>
             </div>
 
             <!-- Resumen de Compra -->
-            <div class="w-full relative z-10 flex justify-center text-gray-200">
-                <div class=" bg-slate-700 rounded p-4 shadow-md">
-                    <h2 class="text-xl font-semibold mb-4">Resumen de Compra</h2>
-                    <div class="flex justify-between mb-2">
-                        <p class="text-gray-200">Producto 1 x 1</p>
-                        <p class="text-lg font-semibold">$20.00</p>
-                    </div>
-                    <div class="flex justify-between mb-2">
-                        <p class="text-gray-200">Producto 2 x 3</p>
-                        <p class="text-lg font-semibold">$90.00</p>
-                    </div>
-                    <br>
-                    <div class="flex justify-between mb-2 text-xl">
-                        <p class="text-gray-200">Total:</p>
-                        <p class="text-lg font-semibold">$50.00</p>
-                    </div>
-                    <div class=" flex items-center justify-center">
-                        <button class="bg-green-500 text-black py-2 px-4 rounded-md">Realizar Compra</button>
-                    </div>
-
-                </div>
+            <div class="w-full relative z-10 flex justify-center text-gray-200" id="summaryCard">
             </div>
+
     </div>
     </main>
     </div>
 
 </body>
-
+<script src="../scripts/shoppingCart.js"></script>
 </html>

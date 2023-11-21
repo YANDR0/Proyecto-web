@@ -17,7 +17,7 @@ function productsToDisplay(itemsToDisplay) {
     let html = "";
     for (const e of itemsToDisplay) {
         html += `
-            <button class="flex flex-col rounded-lg bg-slate-700 md:flex-row chistoso" uuid="${e._id}" onclick="focusProduct('${e.image}','${e.name}','${e.price}','${e.description}')">
+            <button class="flex flex-col rounded-lg bg-slate-700 md:flex-row chistoso" uuid="${e._id}" onclick="focusProduct('${e._id}','${e.name}', '${e.description}', '${e.price}', '${e.stock}', '${e.image}')">
                 <img class="w-1/4 h-auto flex-1 rounded-t-lg object-cover md:!rounded-none md:!rounded-l-lg"
                 src="${e.image}">
                 <div class="w-3/4 justify-start p-6 text-slate-300">
@@ -49,7 +49,7 @@ function productsToDisplay(itemsToDisplay) {
                         <div class="flex justify-center items-center rounded-lg shadow-sm">
                             <button
                                 class="py-3 px-4 gap-x-2 text-sm font-semibold rounded-md border border-transparent bg-blue-500 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                                onclick="document.getElementById('buyProduct').showModal()">
+                                onclick="focusProductsFunctions('${itemsToDisplay[0].id}', '${itemsToDisplay[0].name}', '${itemsToDisplay[0].description}', '${itemsToDisplay[0].price}', '${itemsToDisplay[0].stock}', '${itemsToDisplay[0].image}')">
                                 Comprar
                             </button>
                         </div>
@@ -58,7 +58,7 @@ function productsToDisplay(itemsToDisplay) {
     `
 }
 
-function focusProduct(image, name, price, description) {
+function focusProduct(id, name, description, price, stock, image) {
     document.getElementById('focusedProduct').innerHTML = `
         <div class="rounded overflow-hidden bg-slate-600">
             <img class="w-full"
@@ -76,7 +76,7 @@ function focusProduct(image, name, price, description) {
                     <div class="flex justify-center items-center rounded-lg shadow-sm">
                     <button
                         class="py-3 px-4 gap-x-2 text-sm font-semibold rounded-md border border-transparent bg-blue-500 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                        onclick="document.getElementById('buyProduct').showModal()">
+                        onclick="focusProductsFunctions('${id}', '${name}', '${description}', '${price}', '${stock}', '${image}')">
                         Comprar
                     </button>
                 </div>
@@ -105,7 +105,8 @@ function vaciarCarrito() {
     sessionStorage.removeItem('carrito');
 }
 
-function setSessionData(name, description, price, stock, imageUrl) {
+function setSessionData(id, name, description, price, stock, imageUrl) {
+    sessionStorage.setItem('id', id);
     sessionStorage.setItem('name', name);
     sessionStorage.setItem('description', description);
     sessionStorage.setItem('price', price);
@@ -119,12 +120,14 @@ document.getElementById('addToCart').addEventListener('click', () => {
     var quantityToAdd = document.querySelector("#addToCartInput").value;
     console.log("quantity: " + quantityToAdd);
 
+    let id = sessionStorage.getItem('id');
     let name = sessionStorage.getItem('name');
     let description = sessionStorage.getItem('description');
     let price = sessionStorage.getItem('price');
     let stock = sessionStorage.getItem('stock');
-    let image = sessionStorage.getItem('imageUrl');
+    let image = sessionStorage.getItem('image');
 
+    console.log("id: " + id);
     console.log("name: " + name);
     console.log("description: " + description);
     console.log("price: " + price);
@@ -133,6 +136,7 @@ document.getElementById('addToCart').addEventListener('click', () => {
 
     // Crear un nuevo objeto JSON para el producto actual
     let producto = {
+        "id": id,
         "name": name,
         "description": description,
         "price": price,
@@ -148,4 +152,9 @@ document.getElementById('addToCart').addEventListener('click', () => {
     sessionStorage.setItem('carrito', JSON.stringify(carritoArr));
 
 });
+
+function focusProductsFunctions(id, name, description, price, stock, image){
+    setSessionData(id, name, description, price, stock, image);
+    document.getElementById('buyProduct').showModal();
+}
 

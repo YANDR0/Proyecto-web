@@ -5,7 +5,7 @@ const productRouter = require('../routes/productsRoutes')
 const router = express.Router();
 
 router.use('/products', productRouter);
-router.use('/users', validateAdmin, usersRouter);
+router.use('/users', usersRouter); //router.use('/users', validateAdmin, usersRouter);
 
 function validateAdmin(req, res, next){
     const header = req.get("x-auth");

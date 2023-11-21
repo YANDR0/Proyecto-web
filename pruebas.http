@@ -11,11 +11,12 @@ content-type: application/json
 x-auth: admin
 
 {
-    "name": "XDDDDDDDDDDDDDD",
-    "mail": "vamo@xd.com",
-    "phone": "9832839120",
-    "image": "photophoto",
-    "pass": "fghwsfhdbfh12"
+    "name": "Juan el admin",
+    "mail": "juan_elAdmin.@gmail.com",
+    "phone": "330897812",
+    "image": "https://raw.githubusercontent.com/YANDR0/Proyecto-web/main/assets/xd/pruwufilePic.png",
+    "pass": "1234567890",
+    "role": "admin"
 }
 
 ### Actualizar usuario

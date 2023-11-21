@@ -1,7 +1,7 @@
 const schems = require("../../server");
 
 function checkUser(json){
-    let keys = ["name", "mail", "phone", "image", "pass"];
+    let keys = ["name", "mail", "phone", "image", "pass", "role"];
     let newUser = {};
 
     for(let i of keys){

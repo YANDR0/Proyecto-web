@@ -221,21 +221,18 @@
         <div class="flex p-4 flex-row sm:ml-64">
 
             <!-- Focus of a product -->
-            <div class="w-2/5 bg-slate-300 mr-3 p-7 rounded flex flex-col h-fit">
+            <div class="w-2/5 bg-slate-300 mr-3 p-7 rounded flex flex-col h-fit" id="focusedProduct">
                 <div class="rounded overflow-hidden bg-slate-600">
                     <img class="w-full"
-                        src="https://raw.githubusercontent.com/YANDR0/Proyecto-web/main/assets/products/calendario.jpg"
-                        alt="Sunset in the mountains">
+                    src=""
+                    alt="Sunset in the mountains">
                     <div class="px-6 py-4 flex flex-col text-slate-300">
-                        <div class="font-bold text-xl mb-2">Mesa para jardín barroca con acabado de piedra</div>
-                        <p class=" text-base">
-                            Mesa ligera y portatil, de gran utilidad en lo que respecta a exteriores, apta para
-                            cualquier tipo de
-                            evento o como simple adorno, material de gran resistencia que seguro aguantará el paso del
-                            tiempo
-                        </p>
-                        <br>
-                        <div class="flex justify-center items-center rounded-lg shadow-sm">
+                        <div class="font-bold text-xl mb-2">Selecciona el producto que quieras ver a detalle</div>
+                            <p class=" text-base">
+                                <br><br><br>
+                            </p>
+                            <br>
+                            <div class="flex justify-center items-center rounded-lg shadow-sm">
                             <button
                                 class="py-3 px-4 gap-x-2 text-sm font-semibold rounded-md border border-transparent bg-blue-500 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                                 onclick="document.getElementById('buyProduct').showModal()">
@@ -248,76 +245,9 @@
 
 
             <!-- List of products -->
-            <div class="w-3/5 bg-slate-400 ml-3 p-6 rounded flex flex-col space-y-4 overflow-auto">
+            <div id="showProducts" class="w-3/5 bg-slate-400 ml-3 p-6 rounded flex flex-col space-y-4 overflow-auto h-fit">
 
-                <div class="flex flex-col rounded-lg bg-slate-700 md:flex-row">
-                    <img class="w-1/4 h-auto flex-1 rounded-t-lg object-cover md:!rounded-none md:!rounded-l-lg"
-                        src="https://raw.githubusercontent.com/YANDR0/Proyecto-web/main/assets/products/calendario.jpg">
-                    <div class="w-3/4 justify-start p-6 text-slate-300">
-                        <h5 class="mb-2 text-xl font-medium text-neutral-50">
-                            Mesa para jardín barroca con acabado de piedra
-                        </h5>
-                        <p class="mb-4 text-base text-neutral-200">
-                            Precio: 15
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Product 1 -->
-                <div class="flex flex-col rounded-lg bg-slate-700 md:flex-row">
-                    <img class="w-full h-auto md:w-1/4 md:h-full rounded-t-lg object-cover md:!rounded-none md:!rounded-l-lg"
-                        src="https://raw.githubusercontent.com/YANDR0/Proyecto-web/main/assets/products/fosil.jpg">
-                    <div class="w-full md:w-3/4 justify-start p-6 text-slate-300">
-                        <h5 class="mb-2 text-xl font-medium text-neutral-50">
-                            Centro de mesa abstracto vintage
-                        </h5>
-                        <p class="mb-4 text-base text-neutral-200">
-                            Precio: 20
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Product 2 -->
-                <div class="flex flex-col rounded-lg bg-slate-700 md:flex-row">
-                    <img class="w-full h-auto md:w-1/4 md:h-full rounded-t-lg object-cover md:!rounded-none md:!rounded-l-lg"
-                        src="https://raw.githubusercontent.com/YANDR0/Proyecto-web/main/assets/products/macuahuitl.jpg">
-                    <div class="w-full md:w-3/4 justify-start p-6 text-slate-300">
-                        <h5 class="mb-2 text-xl font-medium text-neutral-50">
-                            Cuchillo para mantequilla
-                        </h5>
-                        <p class="mb-4 text-base text-neutral-200">
-                            Precio: 20
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Product 3 -->
-                <div class="flex flex-col rounded-lg bg-slate-700 md:flex-row">
-                    <img class="w-1/4 h-auto flex-1 rounded-t-lg object-cover md:!rounded-none md:!rounded-l-lg"
-                        src="https://raw.githubusercontent.com/YANDR0/Proyecto-web/main/assets/products/moai.jpg">
-                    <div class="w-3/4 justify-start p-6">
-                        <h5 class="mb-2 text-xl font-medium text-neutral-50">
-                            Pisapapeles para un conglomerado de oficinas
-                        </h5>
-                        <p class="mb-4 text-base text-neutral-200">
-                            Precio: 1
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Product 4 -->
-                <div class="flex flex-col rounded-lg bg-slate-700 md:flex-row">
-                    <img class="w-1/4 h-auto flex-1 rounded-t-lg object-cover md:!rounded-none md:!rounded-l-lg"
-                        src="https://raw.githubusercontent.com/YANDR0/Proyecto-web/main/assets/products/piramide.jpg">
-                    <div class="w-3/4 justify-start p-6">
-                        <h5 class="mb-2 text-xl font-medium text-neutral-50">
-                            Casa de campaña familiar para climas áridos
-                        </h5>
-                        <p class="mb-4 text-base text-neutral-200">
-                            Precio: 50
-                        </p>
-                    </div>
-                </div>
+                
 
 
             </div>
@@ -373,5 +303,5 @@
 
 
 </body>
-
+<script src="../scripts/home.js"></script>
 </html>

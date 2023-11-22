@@ -69,11 +69,13 @@ function showInterface (){
                 <h1 class="text-3xl text-gray-200"><b>${user.name}</b></h1> <br>
                 <p class="text-lg text-gray-200"><b>Correo: </b>${user.mail}</p>
                 <p class="text-lg text-gray-200"><b>Teléfono: </b>${user.phone}</p> <br>
-                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded bottom-0">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded bottom-0"
+                onclick="document.getElementById('modifyUser').showModal()">
                     Actualizar datos
                 </button>
                 <p class="p-2"></p>
-                <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded bottom-0">
+                <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded bottom-0"
+                onclick="document.getElementById('closeSession').showModal()">
                     Cerrar sesión
                 </button>
             </div>`;

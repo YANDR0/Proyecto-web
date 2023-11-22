@@ -25,6 +25,16 @@ function putProductXHR(json){
     xhr.open(crud, url);
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.send(json);
+    window.location.reload();
+}
+
+function putProductXHR(json){
+    url = 'http://localhost:3000/products';
+    crud = 'POST';
+    xhr.open(crud, url);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send(json);
+    window.location.reload();
 }
 
 getUsersXHR();
@@ -38,9 +48,6 @@ xhr.onload = function () {
         if(url == 'http://localhost:3000/products' && crud == 'GET'){
             inventory = JSON.parse(xhr.responseText);
             showInterface();
-        }
-        if(url == 'http://localhost:3000/products' && crud == 'PUT'){
-            getUsersXHR();
         }
     }
 };
@@ -105,7 +112,7 @@ function showInterface (){
         <div class="flex flex-col justify-around items-center rounded-lg shadow-sm pt-2 md:flex-row pb-6">
             <button type="button"
                 class="py-2 px-4 flex justify-center items-center gap-x-2 text-sm font-semibold rounded-md border border-transparent bg-green-600 text-white hover:bg-green-800 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                onclick="document.getElementById('modifyProducts').showModal()">
+                onclick="updateProducts('${0}')">
                 Agregar producto
             </button>
         </div>`;
@@ -160,7 +167,10 @@ document.getElementById('Modify').addEventListener('click', () => {
         "stock": document.querySelector("#ModifiedStock").value
     };
 
-    putProductXHR(JSON.stringify(producto));
+    if(sessionStorage.getItem('uuid') == 0)
+        putProductXHR(JSON.stringify(producto));
+    else
+        putProductXHR(JSON.stringify(producto));
 
     // Agregar el nuevo producto al Usuario
     //usuarioArr.push(producto);

@@ -18,27 +18,49 @@
             <div class="flex flex-col">
                 <div class="flex flex-col p-2">
                     <label for="">Nombre:</label>
-                    <input type="text" placeholder="nombre">
+                    <input type="text" placeholder="nombre" id="ModifiedName">
                 </div>
                 <div class="flex flex-col p-2">
                     <label for="">Descripcion:</label>
-                    <input type="text" placeholder="descripcion">
+                    <input type="text" placeholder="descripcion" id="ModifiedDesc">
                 </div>
                 <div class="flex flex-col p-2">
                     <label for="">Imagen:</label>
-                    <input type="text" placeholder="imagen">
+                    <input type="text" placeholder="imagen" id="ModifiedImg">
                 </div>
                 <div class="flex flex-col p-2">
                     <label for="">Precio:</label>
-                    <input type="number" placeholder="precio">
+                    <input type="number" placeholder="precio" id="ModifiedPrice">
                 </div>
                 <div class="flex flex-col p-2">
                     <label for="">Stock:</label>
-                    <input type="number" placeholder="stock">
+                    <input type="number" placeholder="stock" id="ModifiedStock">
                 </div>
-                <button type="submit" class="flex items-center justify-center pt-3">Aceptar</button>
+                <button type="submit" class="flex items-center justify-center pt-3" id="Modify">Aceptar</button>
             </div>
         </form>
+    </dialog>
+
+    <dialog id="deleteProducts" class="modal modal-bottom sm:modal-middle">
+        <div class="relative p-4 w-full max-w-lg max-h-full bg-gray-700">
+            <!-- Modal content -->
+            <div class="relative bg-gray-50 shadow bg-gray-700">
+                <!-- Modal header -->
+                <div class="flex items-center justify-between p-4 md:p-5 border-b border-gray-600">
+                    <h3 class="text-lg font-semibold text-gray-900 text-white">
+                        Seguro que deseas Eliminar el producto?
+                    </h3>
+
+                </div>
+                <div class="flex justify-center items-center p-4">
+                    <form method="dialog" class="flex justify-around">
+                        <!-- if there is a button in form, it will close the modal -->
+                        <button class="btn text-white bg-red-600 py-2 px-4 rounded-md flex">Eliminar</button>
+                        <button class="btn text-white bg-red-600 py-2 px-4 rounded-md flex">Cancelar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </dialog>
 
     <dialog id="feedbackImage" class="modal modal-bottom sm:modal-middle">

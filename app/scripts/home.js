@@ -142,3 +142,14 @@ function focusProductsFunctions(uuid){
     document.getElementById('buyProduct').showModal();
 }
 
+function verifyAccount(){
+
+    let user = sessionStorage.getItem('currUser')
+    if(!!user){
+        console.log('hola')
+        window.location.replace("http://localhost:3000/user_profile")
+    }else{
+        //document.getElementById('logInModal').showModal();
+    }
+
+}

@@ -68,12 +68,12 @@ function showInterface (){
                         <div class="flex justify-around items-center rounded-lg shadow-sm pt-2">
                             <button type="button"
                                 class="py-3 px-4 flex justify-center items-center gap-x-2 text-sm font-semibold rounded-md border border-transparent bg-blue-500 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                                onclick="document.getElementById('modifyProducts').showModal()">
+                                onclick="updateProducts('${e.id}')">
                                 Actualizar
                             </button>
                             <button type="button"
                                 class="py-3 px-4 flex justify-center items-center gap-x-2 text-sm font-semibold rounded-md border border-transparent bg-red-500 text-white hover:bg-red-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                                onclick="document.getElementById('modifyProducts').showModal()">
+                                onclick="document.getElementById('deleteProducts').showModal()">
                                 Eliminar
                             </button>
                         </div>
@@ -95,15 +95,71 @@ function showInterface (){
 
 }
 
+function updateProducts(id){
 
+    sessionStorage.setItem('id', id);
+    document.getElementById('modifyProducts').showModal();
 
-function inicializarCarrito() {
+}
+
+function inicializarProducto() {
+    if (sessionStorage.getItem('currProducto') === null) {
+        const start = [];
+        sessionStorage.setItem('currProducto', JSON.stringify(start));
+    }
+}
+
+function inicializarUsuario() {
     if (sessionStorage.getItem('currUser') === null) {
         const start = [];
         sessionStorage.setItem('currUser', JSON.stringify(start));
     }
 }
 
-inicializarCarrito();
-
-
+inicializarProducto()
+inicializarUsuario();
+  
+  // Función para leer el contenido del Usuario
+  function obtenerUsuario() {
+    return JSON.parse(sessionStorage.getItem('currProducto'));
+  }
+  
+  // Función para borrar el carrito
+  function vaciarUsuario() {
+    sessionStorage.removeItem('currProducto');
+  }
+  
+  document.getElementById('Modify').addEventListener('click', () => {
+      let usuarioArr = obtenerUsuario(); // Obtener el Usuario actual
+  
+      //var id = sessionStorage.getItem('id');
+      var name = document.querySelector("#ModifiedName").value;
+      var description = document.querySelector("#ModifiedDesc").value;
+      var image = document.querySelector("#ModifiedImg").value;
+      var price = document.querySelector("#ModifiedPrice").value;
+      var stock = document.querySelector("#ModifiedStock").value;
+  
+      //console.log("id: " + id);
+      console.log("name: " + name);
+      console.log("description: " + description);
+      console.log("image: " + image);
+      console.log("price: " + price);
+      console.log("stock: " + stock);
+  
+      // Crear un nuevo objeto JSON para el producto actual
+      let producto = {
+          //"id": id,
+          "name": name,
+          "description": description,
+          "image": image,
+          "price": price,
+          "stock": stock
+      };
+  
+      // Agregar el nuevo producto al Usuario
+      usuarioArr.push(producto);
+  
+      // Almacenar el Usuario actualizado en el sessionStorage
+      sessionStorage.setItem('currProducto', JSON.stringify(usuarioArr));
+  
+  });

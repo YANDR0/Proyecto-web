@@ -2,26 +2,45 @@
 let xhr = new XMLHttpRequest();
 var usersList = [];
 var inventory = [];
+var url;
+var crud;
 
-let url = 'http://localhost:3000/users'
-xhr.open('GET', url);
-xhr.send();
-
-function aver(){
-    url = 'http://localhost:3000/products'
-    xhr.open('GET', url);
+function getUsersXHR () {
+    url = 'http://localhost:3000/users';
+    crud = 'GET';
+    xhr.open(crud, url);
     xhr.send();
 }
 
+function getProductsXHR(){
+    url = 'http://localhost:3000/products';
+    crud = 'GET';
+    xhr.open(crud, url);
+    xhr.send();
+}
+
+function putProductXHR(json){
+    url = 'http://localhost:3000/products';
+    crud = 'PUT';
+    xhr.open(crud, url);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send(json);
+}
+
+getUsersXHR();
+
 xhr.onload = function () {
     if (xhr.status === 200){
-        if(url == 'http://localhost:3000/users'){
+        if(url == 'http://localhost:3000/users' && crud == 'GET'){
             usersList = JSON.parse(xhr.responseText);
-            aver();
+            getProductsXHR();
         }
-        if(url == 'http://localhost:3000/products'){
+        if(url == 'http://localhost:3000/products' && crud == 'GET'){
             inventory = JSON.parse(xhr.responseText);
             showInterface();
+        }
+        if(url == 'http://localhost:3000/products' && crud == 'PUT'){
+            getUsersXHR();
         }
     }
 };
@@ -68,7 +87,7 @@ function showInterface (){
                         <div class="flex justify-around items-center rounded-lg shadow-sm pt-2">
                             <button type="button"
                                 class="py-3 px-4 flex justify-center items-center gap-x-2 text-sm font-semibold rounded-md border border-transparent bg-blue-500 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                                onclick="updateProducts('${e.id}')">
+                                onclick="updateProducts('${e._id}')">
                                 Actualizar
                             </button>
                             <button type="button"
@@ -96,10 +115,8 @@ function showInterface (){
 }
 
 function updateProducts(id){
-
-    sessionStorage.setItem('id', id);
+    sessionStorage.setItem('uuid', id);
     document.getElementById('modifyProducts').showModal();
-
 }
 
 function inicializarProducto() {
@@ -119,47 +136,36 @@ function inicializarUsuario() {
 inicializarProducto()
 inicializarUsuario();
   
-  // Función para leer el contenido del Usuario
-  function obtenerUsuario() {
+// Función para leer el contenido del Usuario
+function obtenerUsuario() {
     return JSON.parse(sessionStorage.getItem('currProducto'));
-  }
+}
   
-  // Función para borrar el carrito
-  function vaciarUsuario() {
+// Función para borrar el carrito
+function vaciarUsuario() {
     sessionStorage.removeItem('currProducto');
-  }
-  
-  document.getElementById('Modify').addEventListener('click', () => {
-      let usuarioArr = obtenerUsuario(); // Obtener el Usuario actual
-  
-      //var id = sessionStorage.getItem('id');
-      var name = document.querySelector("#ModifiedName").value;
-      var description = document.querySelector("#ModifiedDesc").value;
-      var image = document.querySelector("#ModifiedImg").value;
-      var price = document.querySelector("#ModifiedPrice").value;
-      var stock = document.querySelector("#ModifiedStock").value;
-  
-      //console.log("id: " + id);
-      console.log("name: " + name);
-      console.log("description: " + description);
-      console.log("image: " + image);
-      console.log("price: " + price);
-      console.log("stock: " + stock);
-  
-      // Crear un nuevo objeto JSON para el producto actual
-      let producto = {
-          //"id": id,
-          "name": name,
-          "description": description,
-          "image": image,
-          "price": price,
-          "stock": stock
-      };
-  
-      // Agregar el nuevo producto al Usuario
-      usuarioArr.push(producto);
-  
-      // Almacenar el Usuario actualizado en el sessionStorage
-      sessionStorage.setItem('currProducto', JSON.stringify(usuarioArr));
-  
-  });
+}
+
+document.getElementById('Modify').addEventListener('click', () => {
+    //let usuarioArr = obtenerUsuario(); // Obtener el Usuario actual
+    //console.log(usuarioArr);
+
+    // Crear un nuevo objeto JSON para el producto actual
+    let producto = {
+        "id": sessionStorage.getItem('uuid'),
+        "name": document.querySelector("#ModifiedName").value,
+        "description": document.querySelector("#ModifiedDesc").value,
+        "image": document.querySelector("#ModifiedImg").value,
+        "price": document.querySelector("#ModifiedPrice").value,
+        "stock": document.querySelector("#ModifiedStock").value
+    };
+
+    putProductXHR(JSON.stringify(producto));
+
+    // Agregar el nuevo producto al Usuario
+    //usuarioArr.push(producto);
+
+    // Almacenar el Usuario actualizado en el sessionStorage
+    //sessionStorage.setItem('currProducto', JSON.stringify(usuarioArr));
+
+});

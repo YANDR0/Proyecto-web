@@ -28,8 +28,8 @@ xhr.onload = function () {
 
 
 function showInterface (){
-    sessionStorage.setItem('user',JSON.stringify(usersList[2]));
-    let user = JSON.parse(sessionStorage.getItem('user'));
+    sessionStorage.setItem('currUser',JSON.stringify(usersList[2]));
+    let user = JSON.parse(sessionStorage.getItem('currUser'));
     
     document.getElementById("profile").innerHTML = `
             <div

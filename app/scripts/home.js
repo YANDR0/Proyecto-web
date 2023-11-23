@@ -149,7 +149,7 @@ function verifyAccount(){
         console.log('hola')
         window.location.replace("http://localhost:3000/user_profile")
     }else{
-        //document.getElementById('logInModal').showModal();
+        document.getElementById('logInModal').showModal();
     }
 
 }

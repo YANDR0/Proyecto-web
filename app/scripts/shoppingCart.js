@@ -22,7 +22,8 @@ function showProductsToCart() {
                         </div>
                         <div class="flex items-center">
                             <p class="text-gray-600 mr-4">$${e.price}</p>
-                            <button class="text-white bg-red-600 py-2 px-4 rounded-md">Eliminar</button>
+                            <button class="text-white bg-red-600 py-2 px-4 rounded-md"
+                            onclick="deleteFromCart('${e._id}')">Eliminar</button>
                         </div>
                     </div>
                 `
@@ -47,7 +48,8 @@ function showProductsToCart() {
                                     <p class="text-lg font-semibold">$${total}</p>
                                 </div>
                                 <div class=" flex items-center justify-center">
-                                    <button class="bg-green-500 text-black py-2 px-4 rounded-md">Realizar Compra</button>
+                                    <button class="bg-green-500 text-black py-2 px-4 rounded-md"
+                                    onclick="document.getElementById('creditCard').showModal()">Realizar Compra</button>
                                 </div>
                             </div>
                     `
@@ -60,7 +62,7 @@ function deleteFromCart(id) {
     console.log("antes: " + carrito);
     console.log("id: " + id);
 
-    const deleteIndex = carrito.findIndex(producto => producto.id === id);
+    const deleteIndex = carrito.findIndex(producto => producto._id === id);
 
     if (deleteIndex !== -1) {
         // Borramos el elemento del carrito usando splice

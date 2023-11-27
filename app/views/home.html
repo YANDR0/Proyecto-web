@@ -26,7 +26,9 @@
                 </div>
                 <!-- Modal body -->
                 <div class="flex items-center justify-between p-4 md:p-5 border-b border-gray-600">
-                    <input type="number" placeholder="Cantidad" id="addToCartInput">
+                    <!-- <input type="number" placeholder="Cantidad"> -->
+                    <label for="price">Escoge la cantidad de productos para comprar: </label>
+                    <input type="range" name="price" min="0" max="1000" step="1" id="addToCartInput"/>
                 </div>
                 <div class="flex justify-center items-center p-4">
                     <form method="dialog">
@@ -102,16 +104,16 @@
                         <div class="col-span-2">
                             <label for="name"
                                 class="block mb-2 text-sm font-medium text-gray-900 text-white">Correo</label>
-                            <input type="text" name="name" id="name"
+                            <input type="text" name="name"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-gray-600 border-gray-500 placeholder-gray-400 text-white focus:ring-primary-500 focus:border-primary-500"
-                                placeholder="Correo" required="">
+                                placeholder="Correo" required="" id="loginMail">
                         </div>
                         <div class="col-span-2">
                             <label for="name"
                                 class="block mb-2 text-sm font-medium text-gray-900 text-white">Contraseña</label>
-                            <input type="text" name="name" id="name"
+                            <input type="text" name="name"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-gray-600 border-gray-500 placeholder-gray-400 text-white focus:ring-primary-500 focus:border-primary-500"
-                                placeholder="Contraseña" required="">
+                                placeholder="Contraseña" required="" id="loginPass">
                         </div>
                     </div>
 
@@ -119,8 +121,8 @@
                 <div class="flex justify-center items-center p-4">
                     <form method="dialog">
                         <!-- if there is a button in form, it will close the modal -->
-                        <button class="btn text-white bg-red-600 py-2 px-4 rounded-md"
-                            onclick="document.getElementById('feedbackImage').showModal()">Close</button>
+                        <button class="btn text-white bg-red-600 py-2 px-4 rounded-md" id="loginbutton">Iniciar
+                            Sesion</button>
                     </form>
                 </div>
             </div>
@@ -263,12 +265,13 @@
 
             <!-- Focus of a product -->
             <div class="w-2/5 bg-slate-300 mr-3 p-7 rounded flex flex-col h-fit" id="focusedProduct">
-                
+
             </div>
 
 
             <!-- List of products -->
-            <div id="showProducts" class="w-3/5 bg-slate-400 ml-3 p-6 rounded flex flex-col space-y-4 overflow-auto h-fit">
+            <div id="showProducts"
+                class="w-3/5 bg-slate-400 ml-3 p-6 rounded flex flex-col space-y-4 overflow-auto h-fit">
             </div>
 
         </div>
@@ -323,4 +326,5 @@
 
 </body>
 <script src="../scripts/home.js"></script>
+
 </html>

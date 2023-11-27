@@ -142,10 +142,20 @@ function focusProductsFunctions(uuid){
     document.getElementById('buyProduct').showModal();
 }
 
+document.getElementById('loginbutton').addEventListener('click', () => {
+    var email = document.querySelector("#loginMail").value;
+    var pass = document.querySelector("#loginPass").value;
+    loginData = {
+        email: email,
+        pass: pass
+    }
+    sessionStorage.setItem('user',loginData);
+});
+
 function verifyAccount(){
 
     let user = sessionStorage.getItem('currUser')
-    if(!!user){
+    if(!user){
         console.log('hola')
         window.location.replace("http://localhost:3000/user_profile")
     }else{

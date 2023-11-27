@@ -1,19 +1,40 @@
 
 var inventory = [];
 var carrito = [];
+var usersList = [];
 var curr;
+var url;
 let xhr = new XMLHttpRequest();
-xhr.open('GET', 'http://localhost:3000/products');
-xhr.send();
+
+function getUsersXHR () {
+    url = 'http://localhost:3000/users';
+    xhr.open('GET', url);
+    xhr.send();
+}
+
+function getProductsXHR(){
+    url = 'http://localhost:3000/products';
+    xhr.open('GET', url);
+    xhr.send();
+}
+
+getUsersXHR();
 
 xhr.onload = function () {
-    if (xhr.status === 200) {
-        inventory = JSON.parse(xhr.responseText);
-        productsToDisplay(inventory);
+    if (xhr.status === 200){
+        if(url == 'http://localhost:3000/users'){
+            usersList = JSON.parse(xhr.responseText);
+            getProductsXHR();
+        }
+        if(url == 'http://localhost:3000/products'){
+            inventory = JSON.parse(xhr.responseText);
+            productsToDisplay(inventory);
+        }
     }
 };
 
 function productsToDisplay(itemsToDisplay) {
+    carrito = obtenerCarrito();
 
     let html = "";
     for (const e of itemsToDisplay) {
@@ -84,8 +105,7 @@ function focusProduct(uuid) {
                 </div>
             </div>
         </div>
-    `
-
+    `;
 }
 
 // Función para inicializar el carrito
@@ -143,19 +163,23 @@ function focusProductsFunctions(uuid){
 }
 
 document.getElementById('loginbutton').addEventListener('click', () => {
+
     var email = document.querySelector("#loginMail").value;
     var pass = document.querySelector("#loginPass").value;
     loginData = {
-        email: email,
+        mail: email,
         pass: pass
     }
-    sessionStorage.setItem('user',loginData);
+    let num = usersList.findIndex(e => e.mail == loginData.mail && e.pass == loginData.pass);
+    console.log(num);
+    if(num <= 0) return;
+    sessionStorage.setItem('currUser', JSON.stringify(usersList[num]));
 });
 
 function verifyAccount(){
 
-    let user = sessionStorage.getItem('currUser')
-    if(!user){
+    let user = sessionStorage.getItem('currUser');
+    if(user){
         console.log('hola')
         window.location.replace("http://localhost:3000/user_profile")
     }else{

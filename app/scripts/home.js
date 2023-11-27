@@ -36,6 +36,11 @@ xhr.onload = function () {
 function productsToDisplay(itemsToDisplay) {
     carrito = obtenerCarrito();
 
+    if(sessionStorage.getItem('currUser')){
+        document.getElementById("dibujito").firstElementChild.innerHTML = "Perfil de usuario";
+        document.getElementById("dibujito").firstElementChild.nextElementSibling.firstElementChild.src = "https://raw.githubusercontent.com/YANDR0/Proyecto-web/main/assets/sidebar/user.png";
+    }
+
     let html = "";
     for (const e of itemsToDisplay) {
         html += `
@@ -171,17 +176,22 @@ document.getElementById('loginbutton').addEventListener('click', () => {
         pass: pass
     }
     let num = usersList.findIndex(e => e.mail == loginData.mail && e.pass == loginData.pass);
-    console.log(num);
     if(num <= 0) return;
     sessionStorage.setItem('currUser', JSON.stringify(usersList[num]));
+    if(sessionStorage.getItem('currUser')){
+        document.getElementById("dibujito").firstElementChild.innerHTML = "Perfil de usuario";
+        document.getElementById("dibujito").firstElementChild.nextElementSibling.firstElementChild.src = "https://raw.githubusercontent.com/YANDR0/Proyecto-web/main/assets/sidebar/user.png";
+    }
 });
 
-function verifyAccount(){
+function verifyAccount(xd){
 
     let user = sessionStorage.getItem('currUser');
     if(user){
-        console.log('hola')
-        window.location.replace("http://localhost:3000/user_profile")
+        if(xd == 1)
+            window.location.replace("http://localhost:3000/user_profile");
+        if(xd == 2)
+            window.location.replace("http://localhost:3000/shopping_cart");
     }else{
         document.getElementById('logInModal').showModal();
     }

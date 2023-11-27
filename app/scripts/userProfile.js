@@ -119,6 +119,9 @@ function showInterface (){
             </button>
         </div>`;
 
+    if(user.role != 'admin')
+        document.getElementById('productEditor').style.visibility = "hidden";
+
     document.getElementById('productEditor').innerHTML = html;
 
 }
@@ -159,7 +162,7 @@ function obtenerUsuario() {
   
 // Función para borrar el carrito
 function vaciarUsuario() {
-    sessionStorage.removeItem('currProducto');
+    sessionStorage.removeItem('currUser');
 }
 
 document.getElementById('modifyP').addEventListener('click', () => {
@@ -189,8 +192,8 @@ document.getElementById('deleteP').addEventListener('click', () => {
 });
 
 document.getElementById('closeS').addEventListener('click',() => {
+    window.location.replace("http://localhost:3000/home");
     vaciarUsuario();
-    inicializarUsuario();
 });
 
 document.getElementById('modifyU').addEventListener('click',() => {

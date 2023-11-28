@@ -32,11 +32,12 @@
                     <label for="">Precio:</label>
                     <input type="number" placeholder="precio" id="ModifiedPrice">
                 </div>
-                <div class="flex flex-col p-2">
+                <div class="flex flex-col p-2 mb-2">
                     <label for="">Stock:</label>
                     <input type="number" placeholder="stock" id="ModifiedStock">
                 </div>
-                <button type="submit" class="flex items-center justify-center pt-3" id="modifyP">Aceptar</button>
+                <button type="submit" class="btn text-white bg-blue-600 py-2 px-4 rounded-md mb-2" id="modifyP">Aceptar</button>
+                <button class="btn text-white bg-red-600 py-2 px-4 rounded-md">Close</button>
             </div>
         </form>
     </dialog>   <!---->
@@ -56,11 +57,16 @@
                     <label for="">correo:</label>
                     <input type="text" placeholder="correo" id="ModifiedEmail">
                 </div>
-                <div class="flex flex-col p-2">
+                <div class="flex flex-col p-2 mb-2">
                     <label for="">número de teléfono:</label>
                     <input type="number" placeholder="Phone Number" id="ModifiedPhoneNum">
                 </div>
-                <button type="submit" class="flex items-center justify-center pt-3" id="modifyU">Aceptar</button>
+                <div class="flex flex-col p-2 mb-2">
+                    <label for="">número de teléfono:</label>
+                    <a> - </a><label for="">000 000 0000</label><a> + </a>
+                </div>
+                <button type="submit" class="btn text-white bg-blue-600 py-2 px-4 rounded-md mb-2" id="modifyU">Aceptar</button>
+                <button class="btn text-white bg-red-600 py-2 px-4 rounded-md">Close</button>
             </div>
         </form>
     </dialog>
@@ -80,7 +86,8 @@
                     <form method="dialog" class="flex justify-around">
                         <!-- if there is a button in form, it will close the modal -->
                         <button class="btn text-white bg-red-600 py-2 px-4 rounded-md flex" id="deleteP">Eliminar</button>
-                        <button class="btn text-white bg-red-600 py-2 px-4 rounded-md flex">Cancelar</button>
+                        <button class="btn text-white bg-red-600 py-2 px-4 rounded-md flex"
+                            onclick="document.getElementById('deleteProducts').showModal()">Cancelar</button>
                     </form>
                 </div>
             </div>
@@ -102,7 +109,8 @@
                     <form method="dialog" class="flex justify-around">
                         <!-- if there is a button in form, it will close the modal -->
                         <button id="closeS" class="btn text-white bg-green-600 py-2 px-4 rounded-md flex mr-3">Aceptar</button>
-                        <button class="btn text-white bg-red-600 py-2 px-4 rounded-md flex ml-3">Cancelar</button>
+                        <button class="btn text-white bg-red-600 py-2 px-4 rounded-md flex ml-3"
+                            onclick="document.getElementById('closeSession').showModal()">Cancelar</button>
                     </form>
                 </div>
             </div>

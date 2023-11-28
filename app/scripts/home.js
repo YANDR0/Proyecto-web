@@ -44,7 +44,7 @@ function productsToDisplay(itemsToDisplay) {
     let html = "";
     for (const e of itemsToDisplay) {
         html += `
-            <div class="flex flex-col rounded-lg bg-slate-700 md:flex-row chistoso" uuid="${e._id}" onclick="focusProduct('${e._id}')">
+            <div class="flex flex-col rounded-lg bg-slate-700 md:flex-row chistoso" uuid="${e._id}" onclick="focusProduct('${e._id}')" id="${e._id}">
                 <img class="w-1/4 h-auto flex-1 rounded-t-lg object-cover md:!rounded-none md:!rounded-l-lg"
                 src="${e.image}">
                 <div class="w-3/4 justify-start p-6 text-slate-300">
@@ -112,6 +112,16 @@ function focusProduct(uuid) {
             </div>
         </div>
     `;
+
+    let cosos = document.getElementsByClassName("border-white-400 border-4");
+    for (let i of cosos) {
+        i.classList.remove('border-white-400');
+        i.classList.remove('border-4');
+    }
+    
+    let a = document.getElementById(uuid);
+    a.classList.add('border-white-400');
+    a.classList.add('border-4');
 }
 
 // Función para inicializar el carrito

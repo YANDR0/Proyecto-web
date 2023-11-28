@@ -60,12 +60,23 @@ function showProductsToCart() {
                                 </div>
                                 <div class=" flex items-center justify-center">
                                     <button class="bg-green-500 text-black py-2 px-4 rounded-md"
-                                    onclick="document.getElementById('creditCard').showModal()">Realizar Compra</button>
+                                    onclick="vamosviendoestacosaxd()">Realizar Compra</button>
                                 </div>
                             </div>
                     `
     document.getElementById("mainCart").innerHTML = html;
     document.getElementById("summaryCard").innerHTML = (summary + summary2pt + summary3pt)
+}
+
+function vamosviendoestacosaxd(){
+    let newResult = JSON.parse(sessionStorage.getItem("carrito"));
+    if(!newResult || newResult.length < 1) {
+        alert("No hay productos en el carrito");
+        return;
+    }
+
+    document.getElementById('creditCard').showModal();
+
 }
 
 function deleteFromCart(id) {

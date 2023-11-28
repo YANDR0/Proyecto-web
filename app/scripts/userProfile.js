@@ -56,6 +56,9 @@ xhr.onload = function () {
 
 function showInterface (){
     let user = JSON.parse(sessionStorage.getItem('currUser'));
+
+    if(user.role != 'admin')
+        document.getElementById('productEditor').style.visibility = "hidden";
     
     document.getElementById("profile").innerHTML = `
             <div
@@ -118,9 +121,6 @@ function showInterface (){
                 Agregar producto
             </button>
         </div>`;
-
-    if(user.role != 'admin')
-        document.getElementById('productEditor').style.visibility = "hidden";
 
     document.getElementById('productEditor').innerHTML = html;
 

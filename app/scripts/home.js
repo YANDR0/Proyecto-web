@@ -44,7 +44,7 @@ function productsToDisplay(itemsToDisplay) {
     let html = "";
     for (const e of itemsToDisplay) {
         html += `
-            <div class="flex flex-col rounded-lg bg-slate-700 md:flex-row chistoso" uuid="${e._id}" onclick="focusProduct('${e._id}')" id="${e._id}">
+            <div class="flex flex-col rounded-lg bg-slate-700 md:flex-row chistoso cursor-pointer" uuid="${e._id}" onclick="focusProduct('${e._id}')" id="${e._id}">
                 <img class="w-1/4 h-auto flex-1 rounded-t-lg object-cover md:!rounded-none md:!rounded-l-lg"
                 src="${e.image}">
                 <div class="w-3/4 justify-start p-6 text-slate-300">

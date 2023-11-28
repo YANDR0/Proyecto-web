@@ -1,10 +1,21 @@
+let xhr = new XMLHttpRequest();
+
 showProductsToCart()
+
+function crudProductXHR(json, op){
+    crud = op;
+    xhr.open(crud, 'http://localhost:3000/products');
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send(json);
+}
+
+xhr.onload = function () {};
+
 function showProductsToCart() {
     const carrito = JSON.parse(sessionStorage.getItem('carrito'));
-    console.log("carrito: " + carrito)
 
     let html = "";
-    let summary2pt = "<h3 class='card-title'>Total de compra</h3><br>";
+    let summary2pt = "<br>";
     let total = 0
 
     for (const e of carrito) {
@@ -29,8 +40,8 @@ function showProductsToCart() {
                 `
 
         summary2pt += ` <div class="flex justify-between mb-2">
-                            <p class="text-gray-200">${e.name}<b> x ${e.quantity}</b></p>
-                            <p class="text-lg font-semibold">$${e.price}</p>
+                            <p class="text-gray-200 mr-4">${e.name}<b> x ${e.quantity}</b></p>
+                            <p class="text-lg font-semibold ml-4">$${e.price}</p>
                         </div>
                     `
         total += (e.price * e.quantity)
@@ -79,3 +90,22 @@ function deleteFromCart(id) {
         console.log("Elemento no encontrado en el carrito");
     }
 };
+
+function updateStock(){
+
+    let newResult = JSON.parse(sessionStorage.getItem("carrito"));
+    console.log(newResult);
+    if(!newResult || newResult.length < 1) return;
+
+    
+    for (let i = 0; i < newResult.length; i++) {
+        newResult[i].stock -= newResult[i].quantity;
+        newResult[i]['id'] = newResult[i]._id;
+        console.log(newResult[i]);
+        crudProductXHR(JSON.stringify(newResult[i]), newResult[i].stock < 1? 'DELETE': 'PUT')
+    }
+
+    sessionStorage.removeItem('carrito');
+    showProductsToCart();
+    document.getElementById('laloGarzaModal').showModal();
+}

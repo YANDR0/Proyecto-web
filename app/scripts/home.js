@@ -51,8 +51,9 @@ function productsToDisplay(itemsToDisplay) {
                     <h5 class="mb-2 text-xl font-medium text-neutral-50">
                         ${e.name}
                     </h5>
-                    <p class="mb-4 text-base text-neutral-200">
-                        Precio: ${e.price}
+                    <p class="flex mb-4 text-base text-neutral-200 justify-between">
+                        <p> Precio: ${e.price} </p>
+                        <p> Stock: ${e.stock} </p>
                     </p>
                 </div>
             </div>
@@ -146,18 +147,20 @@ document.getElementById('addToCart').addEventListener('click', () => {
     }
 
     let index = carritoArr.findIndex((p) => p._id == curr._id);
+    let original = inventory.find((p) => p._id == curr._id);
 
-    // Crear un nuevo objeto JSON para el producto actual
+    if(original.stock < quantityToAdd){
+        alert("La cantidad excede al stock actual");
+        return;
+    }
+
     curr["quantity"] = quantityToAdd;
 
-    // Agregar el nuevo producto al carrito
     if(index == -1)
         carritoArr.push(curr);  
     else
         carritoArr[index] = curr;
         
-
-    // Almacenar el carrito actualizado en el sessionStorage
     sessionStorage.setItem('carrito', JSON.stringify(carritoArr));
 
 });

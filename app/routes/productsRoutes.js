@@ -21,7 +21,6 @@ router.put("/", (req, res) => {
 })
 
 router.get("/", (req, res) => {
-    console.log("Obtener producto");
     schems.Product.find({}).then((docs) => res.send(docs)).catch((err) => console.log(err));
 })
 

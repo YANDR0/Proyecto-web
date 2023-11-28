@@ -21,7 +21,6 @@ router.put("/", (req, res) => {
 
 //  ### GET users               LISTO
 router.get("/", (req, res) => {
-    console.log("Obtener usuarios");
     schems.User.find({}).then((docs) => res.send(docs)).catch((err) => console.log(err));
 })
 

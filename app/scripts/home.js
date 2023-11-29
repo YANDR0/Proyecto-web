@@ -156,21 +156,23 @@ document.getElementById('addToCart').addEventListener('click', () => {
         return;
     }
 
-    let index = carritoArr.findIndex((p) => p._id == curr._id);
+    quantityToAdd = parseInt(quantityToAdd);
+
     let original = inventory.find((p) => p._id == curr._id);
 
-    if(original.stock < quantityToAdd){
+    let s = parseInt(original.stock);
+    if(s < quantityToAdd){
         alert("La cantidad excede al stock actual");
         return;
     }
 
+    
     curr["quantity"] = quantityToAdd;
-
+    let index = carritoArr.findIndex((p) => p._id == curr._id);
     if(index == -1)
         carritoArr.push(curr);  
     else
         carritoArr[index] = curr;
-        
     sessionStorage.setItem('carrito', JSON.stringify(carritoArr));
 
 });
@@ -184,17 +186,26 @@ document.getElementById('loginbutton').addEventListener('click', () => {
 
     var email = document.querySelector("#loginMail").value;
     var pass = document.querySelector("#loginPass").value;
+
+    let num = usersList.findIndex(e => e.mail == email && e.pass == pass);
+    if(num <= 0){
+        alert("Correo o contraseña incorrectos")
+        return;
+    } 
+    
     loginData = {
         mail: email,
         pass: pass
     }
-    let num = usersList.findIndex(e => e.mail == loginData.mail && e.pass == loginData.pass);
-    if(num <= 0) return;
+
+    console.log(loginData);
     sessionStorage.setItem('currUser', JSON.stringify(usersList[num]));
+    
     if(sessionStorage.getItem('currUser')){
         document.getElementById("dibujito").firstElementChild.innerHTML = "Perfil de usuario";
         document.getElementById("dibujito").firstElementChild.nextElementSibling.firstElementChild.src = "https://raw.githubusercontent.com/YANDR0/Proyecto-web/main/assets/sidebar/user.png";
     }
+    
 });
 
 function verifyAccount(xd){

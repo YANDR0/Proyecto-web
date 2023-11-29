@@ -33,7 +33,7 @@ function showProductsToCart() {
                         </div>
                         <div class="flex items-center">
                             <p class="text-gray-600 mr-4">$${e.price}</p>
-                            <button class="text-white bg-red-600 py-2 px-4 rounded-md"
+                            <button class="text-white bg-blue-600 py-2 px-4 rounded-md"
                             onclick="deleteFromCart('${e._id}')">Eliminar</button>
                         </div>
                     </div>
@@ -59,7 +59,7 @@ function showProductsToCart() {
                                     <p class="text-lg font-semibold">$${total}</p>
                                 </div>
                                 <div class=" flex items-center justify-center">
-                                    <button class="bg-green-500 text-black py-2 px-4 rounded-md"
+                                    <button class="bg-red-500 text-black py-2 px-4 rounded-md"
                                     onclick="vamosviendoestacosaxd()">Realizar Compra</button>
                                 </div>
                             </div>

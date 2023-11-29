@@ -76,7 +76,7 @@ function productsToDisplay(itemsToDisplay) {
                     <br>
                         <div class="flex justify-center items-center rounded-lg shadow-sm">
                             <button
-                                class="py-3 px-4 gap-x-2 text-sm font-semibold rounded-md border border-transparent bg-blue-500 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                                class="py-3 px-4 gap-x-2 text-sm font-semibold rounded-md border border-transparent bg-red-500 text-white hover:bg-red-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                                 onclick="focusProductsFunctions('${itemsToDisplay[0]._id}')">
                                 Comprar
                             </button>
@@ -104,7 +104,7 @@ function focusProduct(uuid) {
                     <br>
                     <div class="flex justify-center items-center rounded-lg shadow-sm">
                     <button
-                        class="py-3 px-4 gap-x-2 text-sm font-semibold rounded-md border border-transparent bg-blue-500 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                        class="py-3 px-4 gap-x-2 text-sm font-semibold rounded-md border border-transparent bg-red-500 text-white hover:bg-red-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                         onclick="focusProductsFunctions('${p._id}')">
                         Comprar
                     </button>

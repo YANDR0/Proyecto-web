@@ -7,6 +7,7 @@ function crudProductXHR(json, op){
     xhr.open(crud, 'http://localhost:3000/products');
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.send(json);
+    window.location.reload();
 }
 
 xhr.onload = function () {};
@@ -113,9 +114,9 @@ function updateStock(){
         newResult[i].stock -= newResult[i].quantity;
         newResult[i]['id'] = newResult[i]._id;
         console.log(newResult[i]);
-        crudProductXHR(JSON.stringify(newResult[i]), newResult[i].stock < 1? 'DELETE': 'PUT')
+        crudProductXHR(JSON.stringify(newResult[i]), newResult[i].stock < 1? 'DELETE': 'PUT');
     }
-
+     
     sessionStorage.removeItem('carrito');
     showProductsToCart();
     document.getElementById('laloGarzaModal').showModal();

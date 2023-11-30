@@ -188,7 +188,7 @@ document.getElementById('loginbutton').addEventListener('click', () => {
     var pass = document.querySelector("#loginPass").value;
 
     let num = usersList.findIndex(e => e.mail == email && e.pass == pass);
-    if(num <= 0){
+    if(num < 0){
         alert("Correo o contraseña incorrectos")
         return;
     } 

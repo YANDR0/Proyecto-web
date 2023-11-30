@@ -25,10 +25,16 @@
 
                 </div>
                 <!-- Modal body -->
-                <div class="flex items-center justify-between p-4 md:p-5 border-b border-gray-600">
+                <div class="flex flex-colitems-center justify-between p-4 md:p-5 border-b border-gray-600">
                     <!-- <input type="number" placeholder="Cantidad"> -->
-                    <label for="price">Escoge la cantidad de productos para comprar: </label>
-                    <input type="range" name="price" min="0" max="1000" step="1" id="addToCartInput"/>
+                    <div>
+                        <label for="price">Escoge la cantidad de productos para comprar: </label>
+                    </div>
+                    <div>
+                        <input type="range" name="price" min="0" max="1000" step="1" id="addToCartInput" value="0"
+                            oninput="this.nextElementSibling.nextElementSibling.value = this.value" />
+                        <label for="">Cantidad: </label><output>0</output>
+                    </div>
                 </div>
                 <div class="flex justify-center items-center p-4">
                     <form method="dialog">
@@ -114,7 +120,8 @@
                                 class="block mb-2 text-sm font-medium text-gray-900 text-white">Contraseña</label>
                             <input type="text" name="name"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-gray-600 border-gray-500 placeholder-gray-400 text-white focus:ring-primary-500 focus:border-primary-500"
-                                placeholder="Contraseña" value="Contraseña" class="text-gray-400" required="" id="loginPass">
+                                placeholder="Contraseña" value="Contraseña" class="text-gray-400" required=""
+                                id="loginPass">
                         </div>
                     </div>
 
@@ -124,7 +131,7 @@
                         <!-- if there is a button in form, it will close the modal -->
                         <button class="btn text-white bg-red-600 py-2 px-4 rounded-md" id="loginbutton">Iniciar
                             Sesion</button>
-                            <button class="btn text-white bg-blue-600 py-2 px-4 rounded-md">Cancelar</button>
+                        <button class="btn text-white bg-blue-600 py-2 px-4 rounded-md">Cancelar</button>
                     </form>
                 </div>
             </div>
@@ -148,7 +155,7 @@
                     </li>
                     <br>
                     <li>
-                        <a id = "dibujito" class="flex items-center p-2 text-gray-300 rounded-lg dark:text-white 
+                        <a id="dibujito" class="flex items-center p-2 text-gray-300 rounded-lg dark:text-white 
                         hover:bg-gray-700 group grid grid-cols-2 ml-2 cursor-pointer" onclick="verifyAccount(1)">
                             <div class="justify-self-start text-lg text-slate-300">Iniciar sesión</div>
                             <div><img
@@ -328,4 +335,5 @@
 </body>
 <script src="../scripts/home.js"></script>
 <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
 </html>

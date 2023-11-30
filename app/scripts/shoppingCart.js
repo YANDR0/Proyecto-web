@@ -120,4 +120,5 @@ function updateStock(){
     sessionStorage.removeItem('carrito');
     showProductsToCart();
     document.getElementById('laloGarzaModal').showModal();
+    
 }
